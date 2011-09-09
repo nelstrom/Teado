@@ -1,6 +1,6 @@
 SenchaOnRails::Application.routes.draw do
   resources :users
 
-  get "welcome/index"
-  root :to => 'welcome#index'
+  get "touch/index"
+  root :to => 'touch#index'
 end
