@@ -1,6 +1,6 @@
 //= require sencha-touch
-//= require "app/app.js"
-//= require_tree "../../../lib/assets/javascripts/app/models"
-//= require_tree "../../../lib/assets/javascripts/app/stores"
-//= require_tree "../../../lib/assets/javascripts/app/views"
-//= require_tree "../../../lib/assets/javascripts/app/controllers"
+//= require "app"
+//= require_tree "./models"
+//= require_tree "./stores"
+//= require_tree "./views"
+//= require_tree "./controllers"
