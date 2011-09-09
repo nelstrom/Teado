@@ -28,7 +28,7 @@ App.models.User = Ext.regModel('User', {
     ],
 
     proxy: {
-        type: 'localstorage',
-        id: 'sencha-users'
+        type: 'rest',
+        url: '/users'
     }
 });
