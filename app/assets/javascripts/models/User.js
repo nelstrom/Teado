@@ -29,6 +29,7 @@ App.models.User = Ext.regModel('User', {
 
     proxy: {
         type: 'rest',
-        url: '/users'
+        url: '/users',
+        format: 'json'
     }
 });
