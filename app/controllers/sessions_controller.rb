@@ -14,7 +14,7 @@ class SessionsController < ApplicationController
           flash.now[:alert] = "Invalid login or password."
           render :action => 'new'
         end
-        format.json { render :json => { :success => false } }
+        format.json { render :json => { :success => false, :message => "Invalid login or password" } }
       end
     end
   end

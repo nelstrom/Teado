@@ -43,8 +43,12 @@ App.views.LoginForm = Ext.extend Ext.form.FormPanel,
                 deactivate: () -> this.resetForm()
                 submit: (form, object) ->
                     console.log "SUCCESS! ", object
+                    fieldset = this.down('#loginFormFieldset');
+                    fieldset.setInstructions('You have successfully logged in!');
                 exception: (form, object) ->
-                    console.log "EXCEPTION: ", object
+                    console.log "EXCEPTION: ", object.message
+                    fieldset = this.down('#loginFormFieldset');
+                    fieldset.setInstructions(object.message);
 
         App.views.LoginForm.superclass.initComponent.call(this)
 
