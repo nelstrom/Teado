@@ -41,6 +41,10 @@ App.views.LoginForm = Ext.extend Ext.form.FormPanel,
             items: [ fields, saveButton ]
             listeners:
                 deactivate: () -> this.resetForm()
+                submit: (form, object) ->
+                    console.log "SUCCESS! ", object
+                exception: (form, object) ->
+                    console.log "EXCEPTION: ", object
 
         App.views.LoginForm.superclass.initComponent.call(this)
 

@@ -3,18 +3,18 @@ class SessionsController < ApplicationController
   end
 
   def create
-    user = User.authenticate(params[:username], params[:password])
+    @user = User.authenticate(params[:username], params[:password])
     respond_to do |format|
-      if user
-        session[:user_id] = user.id
+      if @user
+        session[:user_id] = @user.id
         format.html { redirect_to_target_or_default root_url, :notice => "Logged in successfully." }
-        format.json { render :json => user, :status => :created }
+        format.json { render :json => { :user => @user, :success => true }, :status => :created }
       else
         format.html do
           flash.now[:alert] = "Invalid login or password."
           render :action => 'new'
         end
-        format.json { render :json => {}, :status => :fail }
+        format.json { render :json => { :success => false } }
       end
     end
   end
