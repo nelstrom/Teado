@@ -4,6 +4,9 @@ gem 'rails', '3.1.0'
 gem 'sqlite3'
 gem 'json'
  
+gem 'bcrypt-ruby', :require => 'bcrypt'
+gem 'mocha', :group => :test
+
 gem 'nifty-generators', :group => :development
 
 # Gems used only for assets and not required
