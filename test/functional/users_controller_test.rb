@@ -1,49 +1,51 @@
 require 'test_helper'
 
 class UsersControllerTest < ActionController::TestCase
-  setup do
-    @user = users(:one)
-  end
-
-  test "should get index" do
-    get :index
-    assert_response :success
-    assert_not_nil assigns(:users)
-  end
-
-  test "should get new" do
+  def test_new
     get :new
-    assert_response :success
+    assert_template 'new'
   end
 
-  test "should create user" do
-    assert_difference('User.count') do
-      post :create, :user => @user.attributes
-    end
-
-    assert_redirected_to user_path(assigns(:user))
+  def test_create_invalid
+    User.any_instance.stubs(:valid?).returns(false)
+    post :create
+    assert_template 'new'
   end
 
-  test "should show user" do
-    get :show, :id => @user.to_param
-    assert_response :success
+  def test_create_valid
+    User.any_instance.stubs(:valid?).returns(true)
+    post :create
+    assert_redirected_to root_url
+    assert_equal assigns['user'].id, session['user_id']
   end
 
-  test "should get edit" do
-    get :edit, :id => @user.to_param
-    assert_response :success
+  def test_edit_without_user
+    get :edit, :id => "ignored"
+    assert_redirected_to login_url
   end
 
-  test "should update user" do
-    put :update, :id => @user.to_param, :user => @user.attributes
-    assert_redirected_to user_path(assigns(:user))
+  def test_edit
+    @controller.stubs(:current_user).returns(User.first)
+    get :edit, :id => "ignored"
+    assert_template 'edit'
   end
 
-  test "should destroy user" do
-    assert_difference('User.count', -1) do
-      delete :destroy, :id => @user.to_param
-    end
+  def test_update_without_user
+    put :update, :id => "ignored"
+    assert_redirected_to login_url
+  end
 
-    assert_redirected_to users_path
+  def test_update_invalid
+    @controller.stubs(:current_user).returns(User.first)
+    User.any_instance.stubs(:valid?).returns(false)
+    put :update, :id => "ignored"
+    assert_template 'edit'
+  end
+
+  def test_update_valid
+    @controller.stubs(:current_user).returns(User.first)
+    User.any_instance.stubs(:valid?).returns(true)
+    put :update, :id => "ignored"
+    assert_redirected_to root_url
   end
 end
