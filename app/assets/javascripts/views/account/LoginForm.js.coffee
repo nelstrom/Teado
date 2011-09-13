@@ -27,6 +27,7 @@ App.views.LoginForm = Ext.extend Ext.form.FormPanel,
                     xtype: 'passwordfield'
                 }
             ]
+
         saveButton =
             xtype: 'button'
             text: 'log in'
@@ -35,6 +36,7 @@ App.views.LoginForm = Ext.extend Ext.form.FormPanel,
 
         Ext.apply this,
             scroll: 'vertical'
+            url: '/sessions.json'
             dockedItems: [ titlebar ]
             items: [ fields, saveButton ]
             listeners:
