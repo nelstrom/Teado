@@ -27,11 +27,16 @@ App.views.LoginForm = Ext.extend Ext.form.FormPanel,
                     xtype: 'passwordfield'
                 }
             ]
+        saveButton =
+            xtype: 'button'
+            text: 'log in'
+            handler: -> this.submit()
+            scope: this
 
         Ext.apply this,
             scroll: 'vertical'
             dockedItems: [ titlebar ]
-            items: [ fields ]
+            items: [ fields, saveButton ]
             listeners:
                 deactivate: () -> this.resetForm()
 
