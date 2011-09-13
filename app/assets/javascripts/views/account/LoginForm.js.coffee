@@ -18,7 +18,7 @@ App.views.LoginForm = Ext.extend Ext.form.FormPanel,
                 autoCapitalize : false
             items: [
                 {
-                    name : 'login'
+                    name : 'username'
                     label: 'username'
                 }
                 {

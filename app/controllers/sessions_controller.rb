@@ -3,7 +3,7 @@ class SessionsController < ApplicationController
   end
 
   def create
-    user = User.authenticate(params[:login], params[:password])
+    user = User.authenticate(params[:username], params[:password])
     respond_to do |format|
       if user
         session[:user_id] = user.id
