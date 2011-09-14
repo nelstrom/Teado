@@ -1,5 +1,7 @@
 Ext.Ajax.on 'beforerequest',
   (conn, options) ->
     console.log 'AJAX - before request: ', options
-    options.headers["X-CSRF-Token"] = 'tWqi23QtwKAt2oigt5Se7+hxrbgIotYDb4sq76QnXw8='
+    metatag = Ext.select('meta[name="csrf-token"]')
+    content = metatag.getValue("content")
+    options.headers["X-CSRF-Token"] = content.elements[0].content
   this
