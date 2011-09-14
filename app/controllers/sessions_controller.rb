@@ -21,6 +21,9 @@ class SessionsController < ApplicationController
 
   def destroy
     session[:user_id] = nil
-    redirect_to root_url, :notice => "You have been logged out."
+    respond_to do |format|
+      format.html { redirect_to root_url, :notice => "You have been logged out." }
+      format.json { render :json => {:message => "bye bye"} }
+    end
   end
 end
