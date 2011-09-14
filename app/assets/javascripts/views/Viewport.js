@@ -5,7 +5,8 @@ App.views.Viewport = Ext.extend(Ext.Panel, {
     initComponent: function() {
         Ext.apply(this, {
             items: [
-                { xtype: 'App.views.LoginForm', id: 'loginForm' },
+                { xtype: 'App.views.Welcome',    id: 'welcomePanel' },
+                { xtype: 'App.views.LoginForm',  id: 'loginForm' },
                 { xtype: 'App.views.SignupForm', id: 'signupForm' },
             ]
         });
