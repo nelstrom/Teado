@@ -6,8 +6,7 @@ App.views.LoginCard = Ext.extend Ext.Panel,
     toggleFormButton = 
       id: 'loginCardToggleButton'
       text: 'Sign up'
-      handler: -> @onFormToggle()
-      scope: this
+      handler: => @onFormToggle()
 
     titleBar = 
       id: 'loginCardTitlebar'
@@ -22,11 +21,11 @@ App.views.LoginCard = Ext.extend Ext.Panel,
       ]
       dockedItems: [ titleBar ]
 
-    App.views.LoginCard.superclass.initComponent.apply(this, arguments);
+    App.views.LoginCard.superclass.initComponent.apply(this, arguments)
 
   onFormToggle: () ->
-    button = this.down('#loginCardToggleButton');
-    titlebar = this.down('#loginCardTitlebar');
+    button = this.down('#loginCardToggleButton')
+    titlebar = this.down('#loginCardTitlebar')
     if button.getText() == 'Sign up'
       button.setText 'Log in'
       titlebar.setTitle 'Sign up'
