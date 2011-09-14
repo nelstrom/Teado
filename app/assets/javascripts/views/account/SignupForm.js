@@ -35,10 +35,7 @@ App.views.SignupForm = Ext.extend(Ext.form.FormPanel, {
 
         Ext.apply(this, {
             scroll: 'vertical',
-            items: [ fields ],
-            listeners: {
-                deactivate: function() { this.resetForm() }
-            }
+            items: [ fields ]
         });
 
         App.views.SignupForm.superclass.initComponent.call(this);

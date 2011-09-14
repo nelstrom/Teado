@@ -4,14 +4,13 @@ App.views.LoginCard = Ext.extend Ext.Panel,
   initComponent: () ->
 
     toggleFormButton = 
+      id: 'loginCardToggleButton'
       text: 'Sign up'
-      handler: ->
-        if @getText() == 'Sign up'
-          @setText 'Log in'
-        else
-          @setText 'Sign up'
+      handler: -> @onFormToggle()
+      scope: this
 
     titleBar = 
+      id: 'loginCardTitlebar'
       xtype: 'toolbar'
       title: 'Log in'
       items: [ {xtype: 'spacer'}, toggleFormButton ]
@@ -24,6 +23,17 @@ App.views.LoginCard = Ext.extend Ext.Panel,
       dockedItems: [ titleBar ]
 
     App.views.LoginCard.superclass.initComponent.apply(this, arguments);
-  
+
+  onFormToggle: () ->
+    button = this.down('#loginCardToggleButton');
+    titlebar = this.down('#loginCardTitlebar');
+    if button.getText() == 'Sign up'
+      button.setText 'Log in'
+      titlebar.setTitle 'Sign up'
+      @setActiveItem('signupForm')
+    else
+      button.setText 'Sign up'
+      titlebar.setTitle 'Log in'
+      @setActiveItem('loginForm')
 
 Ext.reg('App.views.LoginCard', App.views.LoginCard)
