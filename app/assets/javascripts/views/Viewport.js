@@ -5,9 +5,8 @@ App.views.Viewport = Ext.extend(Ext.Panel, {
     initComponent: function() {
         Ext.apply(this, {
             items: [
-                { xtype: 'App.views.Welcome',    id: 'welcomePanel' },
-                { xtype: 'App.views.LoginForm',  id: 'loginForm' },
-                { xtype: 'App.views.SignupForm', id: 'signupForm' },
+                { xtype: 'App.views.LoginCard',  id: 'loginCardPanel' },
+                { xtype: 'App.views.Dashboard',  id: 'dashboardPanel' },
             ]
         });
         App.views.Viewport.superclass.initComponent.apply(this, arguments);

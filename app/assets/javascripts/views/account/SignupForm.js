@@ -1,14 +1,7 @@
 App.views.SignupForm = Ext.extend(Ext.form.FormPanel, {
 
     initComponent: function(){
-        var titlebar, cancelButton, buttonbar, saveButton, deleteButton, fields;
-
-        titlebar = {
-            id: 'loginFormTitlebar',
-            xtype: 'toolbar',
-            title: 'Log in',
-            items: []
-        };
+        var cancelButton, buttonbar, saveButton, deleteButton, fields;
 
         fields = {
             xtype: 'fieldset',
@@ -42,7 +35,6 @@ App.views.SignupForm = Ext.extend(Ext.form.FormPanel, {
 
         Ext.apply(this, {
             scroll: 'vertical',
-            dockedItems: [ titlebar ],
             items: [ fields ],
             listeners: {
                 deactivate: function() { this.resetForm() }
