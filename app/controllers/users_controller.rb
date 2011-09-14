@@ -1,10 +1,10 @@
 class UsersController < ApplicationController
   before_filter :login_required, :except => [:new, :create]
 
-  def show
+  def current
     respond_to do |format|
       if @user = current_user
-        format.json { render :json => { :user => @user, :active => true } }
+        format.json { render :json => { :username => @user.username, :active => true } }
       else
         format.json { render :json => { :active => false } }
       end
