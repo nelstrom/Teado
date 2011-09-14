@@ -13,15 +13,15 @@ App.views.SignupForm = Ext.extend Ext.form.FormPanel,
         autoCapitalize : false
       items: [
         {
-          name : 'username'
+          name : 'user[username]'
           label: 'username'
         }
         {
-          name : 'email'
+          name : 'user[email]'
           label: 'email'
         }
         {
-          name: 'password'
+          name: 'user[password]'
           label: 'password'
           xtype: 'passwordfield'
         }
@@ -40,6 +40,10 @@ App.views.SignupForm = Ext.extend Ext.form.FormPanel,
       listeners:
         submit: (form, object) ->
           console.log 'creating a new user account...'
+        exception: (form, object) ->
+          console.log object
+          fieldset = this.down('#signupFormFieldset');
+          fieldset.setInstructions(object.message);
 
     App.views.SignupForm.superclass.initComponent.call(this)
 
