@@ -1,4 +1,5 @@
-Ext.regController 'Login',
+Ext.regController 'login',
 
   index: () ->
-    App.views.viewport.reveal('loginCardPanel');
+    console.log 'login#index'
+    App.views.viewport.reveal('loginCardPanel')

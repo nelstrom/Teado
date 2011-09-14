@@ -13,6 +13,6 @@ App.views.Viewport = Ext.extend Ext.Panel,
 
   reveal: (target) ->
     direction = (target == 'loginCardPanel') ? 'up' : 'down'
-    @setActiveItem App.views[target],
+    @setActiveItem target,
       { type: 'slide', direction: direction, duration: 500 }
 
