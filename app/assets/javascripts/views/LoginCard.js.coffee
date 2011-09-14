@@ -29,10 +29,12 @@ App.views.LoginCard = Ext.extend Ext.Panel,
     if button.getText() == 'Sign up'
       button.setText 'Log in'
       titlebar.setTitle 'Sign up'
-      @setActiveItem('signupForm')
+      @setActiveItem 'signupForm',
+        { type: 'slide', direction: 'right' }
     else
       button.setText 'Sign up'
       titlebar.setTitle 'Log in'
-      @setActiveItem('loginForm')
+      @setActiveItem 'loginForm',
+        { type: 'slide', direction: 'left' }
 
 Ext.reg('App.views.LoginCard', App.views.LoginCard)
