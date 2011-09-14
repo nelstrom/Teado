@@ -40,13 +40,10 @@ App.views.LoginForm = Ext.extend Ext.form.FormPanel,
             dockedItems: [ titlebar ]
             items: [ fields, saveButton ]
             listeners:
-                deactivate: () -> this.resetForm()
                 submit: (form, object) ->
-                    console.log "SUCCESS! ", object
                     fieldset = this.down('#loginFormFieldset');
                     fieldset.setInstructions('You have successfully logged in!');
                 exception: (form, object) ->
-                    console.log "EXCEPTION: ", object.message
                     fieldset = this.down('#loginFormFieldset');
                     fieldset.setInstructions(object.message);
 
