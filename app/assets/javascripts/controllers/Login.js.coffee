@@ -26,4 +26,5 @@ Ext.regController 'userSession',
         Ext.dispatch
           controller: 'userSession'
           action: 'new'
+          historyUrl: 'login'
 

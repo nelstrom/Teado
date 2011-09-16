@@ -22,8 +22,8 @@ App.views.Dashboard = Ext.extend Ext.Panel,
       dockedItems: [ titlebar ]
       listeners:
         beforeactivate: ->
-          currentUser = App.stores.currentUser.first()
-          this.update(currentUser.data)
+          if currentUser = App.stores.currentUser.first()
+            this.update(currentUser.data)
 
     App.views.Dashboard.superclass.initComponent.call(this)
 
