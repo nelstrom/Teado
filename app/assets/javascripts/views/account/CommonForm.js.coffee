@@ -30,9 +30,9 @@ App.views.CommonForm = Ext.extend Ext.form.FormPanel,
         submit: (form, object) ->
           @setLoading(true)
           Ext.dispatch
-            controller: 'welcome'
+            controller: 'dashboard'
             action: 'index'
-            historyUrl: 'welcome'
+            historyUrl: 'dashboard'
 
     App.views.CommonForm.superclass.initComponent.call(this)
 

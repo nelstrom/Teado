@@ -1,4 +1,4 @@
-Ext.regController 'welcome',
+Ext.regController 'dashboard',
 
   index: ->
     App.stores.currentUser.load

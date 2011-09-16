@@ -1,7 +1,7 @@
 Ext.Router.draw (map) ->
 
-  map.connect "welcome",
-    controller: 'welcome'
+  map.connect "dashboard",
+    controller: 'dashboard'
     action: 'index'
 
   map.connect "login",
