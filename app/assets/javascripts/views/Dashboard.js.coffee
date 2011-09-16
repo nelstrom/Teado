@@ -13,7 +13,7 @@ App.views.Dashboard = Ext.extend Ext.Panel,
       id: 'dashboardTitlebar'
       xtype: 'toolbar'
       title: 'Dashboard'
-      items: [ logoutButton ]
+      items: [ {xtype: 'spacer'}, logoutButton ]
 
     Ext.apply this,
       scroll: 'vertical'

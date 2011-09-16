@@ -25,3 +25,7 @@ Ext.regController 'login',
       url: '/logout.json'
       success: (response, params) ->
         console.log 'logged out!'
+        Ext.dispatch
+          controller: 'login'
+          action: 'index'
+
