@@ -28,6 +28,7 @@ App.views.CommonForm = Ext.extend Ext.form.FormPanel,
           fieldset = @down("##{pane.slug}FormFieldset")
           fieldset.setInstructions(object.message)
         submit: (form, object) ->
+          @setLoading(true)
           Ext.dispatch
             controller: 'welcome'
             action: 'index'
@@ -38,6 +39,7 @@ App.views.CommonForm = Ext.extend Ext.form.FormPanel,
   resetForm: ->
     fieldset = @down("##{this.slug}FormFieldset")
     fieldset.setInstructions(@defaultInstructions)
+    @setLoading(false)
     @reset()
 
 Ext.reg('App.views.CommonForm', App.views.CommonForm)
