@@ -20,6 +20,10 @@ App.views.LoginCard = Ext.extend Ext.Panel,
         { xtype: 'App.views.SignupForm',  id: 'signupForm' }
       ]
       dockedItems: [ titleBar ]
+      listeners:
+        deactivate: ->
+          @down('#loginForm').resetForm()
+          @down('#signupForm').resetForm()
 
     App.views.LoginCard.superclass.initComponent.apply(this, arguments)
 

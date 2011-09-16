@@ -47,4 +47,6 @@ App.views.SignupForm = Ext.extend Ext.form.FormPanel,
 
     App.views.SignupForm.superclass.initComponent.call(this)
 
+  resetForm: -> @reset()
+
 Ext.reg('App.views.SignupForm', App.views.SignupForm)
