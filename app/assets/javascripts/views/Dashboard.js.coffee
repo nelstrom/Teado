@@ -17,8 +17,13 @@ App.views.Dashboard = Ext.extend Ext.Panel,
 
     Ext.apply this,
       scroll: 'vertical'
-      html: 'Dashboard overview of whatever'
+      tpl: 'Welcome, {username}!'
+      styleHtmlContent: true
       dockedItems: [ titlebar ]
+      listeners:
+        beforeactivate: ->
+          currentUser = App.stores.currentUser.first()
+          this.update(currentUser.data)
 
     App.views.Dashboard.superclass.initComponent.call(this)
 
