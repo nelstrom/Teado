@@ -1,12 +1,13 @@
 App.views.LoginForm = Ext.extend Ext.form.FormPanel,
 
+  defaultInstructions: 'Enter your username (or email address) and password to log in'
   initComponent: () ->
 
     fields =
       xtype: 'fieldset'
       id: 'loginFormFieldset'
       title: 'Log in'
-      instructions: 'Enter your username (or email address) and password to log in'
+      instructions: @defaultInstructions
       defaults:
         xtype: 'textfield'
         required: false
@@ -26,8 +27,7 @@ App.views.LoginForm = Ext.extend Ext.form.FormPanel,
     saveButton =
       xtype: 'button'
       text: 'log in'
-      handler: -> this.submit()
-      scope: this
+      handler: => @submit()
 
     Ext.apply this,
       scroll: 'vertical'
@@ -35,15 +35,20 @@ App.views.LoginForm = Ext.extend Ext.form.FormPanel,
       url: '/sessions.json'
       listeners:
         exception: (form, object) ->
-          fieldset = this.down('#loginFormFieldset');
-          fieldset.setInstructions(object.message);
+          fieldset = @down('#loginFormFieldset')
+          fieldset.setInstructions(object.message)
         submit: (form, object) ->
-          @reset()
+          @resetForm()
           Ext.dispatch
             controller: 'welcome'
             action: 'index'
             historyUrl: 'welcome'
 
     App.views.LoginForm.superclass.initComponent.call(this)
+
+  resetForm: ->
+    fieldset = @down('#loginFormFieldset')
+    fieldset.setInstructions(@defaultInstructions)
+    @reset()
 
 Ext.reg('App.views.LoginForm', App.views.LoginForm)
