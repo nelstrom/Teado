@@ -4,9 +4,9 @@ class UsersController < ApplicationController
   def current
     respond_to do |format|
       if @user = current_user
-        format.json { render :json => { :username => @user.username, :active => true } }
+        format.json { render :json => { :current_users => [{:username => @user.username, :active => true}] } }
       else
-        format.json { render :json => { :active => false } }
+        format.json { render :json => { :current_users => [{:active => false}] } }
       end
     end
   end

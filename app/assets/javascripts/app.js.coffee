@@ -1,6 +1,6 @@
 new Ext.Application
   name: 'App'
-  defaultUrl: 'login'
+  defaultUrl: 'welcome'
 
   launch: ->
     this.views.viewport = new this.views.Viewport();

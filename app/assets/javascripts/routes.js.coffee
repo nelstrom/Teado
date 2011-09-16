@@ -1,9 +1,13 @@
 Ext.Router.draw (map) ->
 
-  map.connect "login",
-    controller: 'login'
+  map.connect "welcome",
+    controller: 'welcome'
     action: 'index'
 
+  map.connect "login",
+    controller: 'userSession'
+    action: 'new'
+
   map.connect "logout",
-    controller: 'login'
-    action: 'logout'
+    controller: 'userSession'
+    action: 'destroy'

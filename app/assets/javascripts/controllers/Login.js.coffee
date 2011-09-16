@@ -1,15 +1,13 @@
-Ext.regController 'login',
+Ext.regController 'userSession',
 
-  index: () ->
-    console.log 'login#index'
+  new: ->
     App.views.viewport.reveal('loginCardPanel')
+
+  create: () ->
+    console.log 'post login details to server'
     Ext.Ajax.request
-      url: '/users/current.json'
+      url: '/users/create.json'
       success: (response, params) ->
-        console.log 'response', response
-        console.log 'params', params
-        console.log 'the current user route works!'
-        window.debug = response
         res = JSON.parse(response.responseText)
         if res.active
           console.log '...and you are logged in!'
@@ -20,12 +18,12 @@ Ext.regController 'login',
       failure: (response, params) ->
         console.log "the current user route doesn't work!"
 
-  logout: ->
+  destroy: ->
     Ext.Ajax.request
       url: '/logout.json'
       success: (response, params) ->
         console.log 'logged out!'
         Ext.dispatch
-          controller: 'login'
-          action: 'index'
+          controller: 'userSession'
+          action: 'new'
 

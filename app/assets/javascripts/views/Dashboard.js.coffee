@@ -4,10 +4,10 @@ App.views.Dashboard = Ext.extend Ext.Panel,
 
     logoutButton =
       text: "Log out"
-      handler: ->
+      handler: =>
         Ext.dispatch
-          controller: 'login'
-          action: 'logout'
+          controller: 'userSession'
+          action: 'destroy'
 
     titlebar =
       id: 'dashboardTitlebar'
