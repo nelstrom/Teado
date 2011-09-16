@@ -10,6 +10,5 @@ Ext.regController 'welcome',
         historyUrl: 'login'
 
     else
-      console.log "Show the Dashboard"
       App.views.viewport.reveal('dashboardPanel')
 

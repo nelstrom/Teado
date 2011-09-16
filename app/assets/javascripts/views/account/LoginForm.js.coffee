@@ -31,17 +31,17 @@ App.views.LoginForm = Ext.extend Ext.form.FormPanel,
 
     Ext.apply this,
       scroll: 'vertical'
-      url: '/sessions.json'
       items: [ fields, saveButton ]
+      url: '/sessions.json'
       listeners:
+        exception: (form, object) ->
+          fieldset = this.down('#loginFormFieldset');
+          fieldset.setInstructions(object.message);
         submit: (form, object) ->
           Ext.dispatch
             controller: 'welcome'
             action: 'index'
             historyUrl: 'welcome'
-        exception: (form, object) ->
-          fieldset = this.down('#loginFormFieldset');
-          fieldset.setInstructions(object.message);
 
     App.views.LoginForm.superclass.initComponent.call(this)
 
