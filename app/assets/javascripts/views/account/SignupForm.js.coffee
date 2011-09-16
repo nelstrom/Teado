@@ -1,17 +1,13 @@
-App.views.SignupForm = Ext.extend Ext.form.FormPanel,
+App.views.SignupForm = Ext.extend App.views.CommonForm,
 
-  initComponent: () ->
+  initComponent: ->
 
-    fields =
-      xtype: 'fieldset'
-      id: 'signupFormFieldset'
-      title: 'User details'
-      instructions: 'To sign up, simply choose your username and password, and provide your email address.'
-      defaults:
-        xtype: 'textfield'
-        required: false
-        autoCapitalize : false
-      items: [
+    Ext.apply this,
+      slug: 'signup'
+      url: '/users.json'
+      fieldsetTitle: 'Sign up'
+      buttonText: 'Create your new account'
+      formFields: [
         {
           name : 'user[username]'
           label: 'username'
@@ -26,29 +22,8 @@ App.views.SignupForm = Ext.extend Ext.form.FormPanel,
           xtype: 'passwordfield'
         }
       ]
-
-    saveButton =
-      xtype: 'button'
-      text: 'Create your new account'
-      handler: -> @submit()
-      scope: this
-
-    Ext.apply this,
-      scroll: 'vertical'
-      url: '/users.json'
-      items: [ fields, saveButton ]
-      listeners:
-        exception: (form, object) ->
-          fieldset = @down('#signupFormFieldset');
-          fieldset.setInstructions(object.message);
-        submit: (form, object) ->
-          Ext.dispatch
-            controller: 'welcome'
-            action: 'index'
-            historyUrl: 'welcome'
+      defaultInstructions: 'To sign up, simply choose your username and password, and provide your email address.'
 
     App.views.SignupForm.superclass.initComponent.call(this)
-
-  resetForm: -> @reset()
 
 Ext.reg('App.views.SignupForm', App.views.SignupForm)

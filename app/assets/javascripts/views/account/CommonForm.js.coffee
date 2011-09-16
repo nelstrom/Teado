@@ -23,7 +23,6 @@ App.views.CommonForm = Ext.extend Ext.form.FormPanel,
     Ext.apply this,
       scroll: 'vertical'
       items: [ fields, saveButton ]
-      url: '/sessions.json'
       listeners:
         exception: (form, object) ->
           fieldset = @down("##{pane.slug}FormFieldset")
