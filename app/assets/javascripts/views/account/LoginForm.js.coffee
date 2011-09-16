@@ -35,9 +35,10 @@ App.views.LoginForm = Ext.extend Ext.form.FormPanel,
       items: [ fields, saveButton ]
       listeners:
         submit: (form, object) ->
-          fieldset = this.down('#loginFormFieldset');
-          fieldset.setInstructions('You have successfully logged in!');
-          App.views.viewport.setActiveItem('welcomePanel')
+          Ext.dispatch
+            controller: 'welcome'
+            action: 'index'
+            historyUrl: 'welcome'
         exception: (form, object) ->
           fieldset = this.down('#loginFormFieldset');
           fieldset.setInstructions(object.message);
