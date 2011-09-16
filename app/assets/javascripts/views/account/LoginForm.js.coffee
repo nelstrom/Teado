@@ -38,6 +38,7 @@ App.views.LoginForm = Ext.extend Ext.form.FormPanel,
           fieldset = this.down('#loginFormFieldset');
           fieldset.setInstructions(object.message);
         submit: (form, object) ->
+          @reset()
           Ext.dispatch
             controller: 'welcome'
             action: 'index'
