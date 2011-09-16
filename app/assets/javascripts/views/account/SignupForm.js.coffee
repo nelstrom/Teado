@@ -30,7 +30,7 @@ App.views.SignupForm = Ext.extend Ext.form.FormPanel,
     saveButton =
       xtype: 'button'
       text: 'Create your new account'
-      handler: -> this.submit()
+      handler: -> @submit()
       scope: this
 
     Ext.apply this,
@@ -38,12 +38,14 @@ App.views.SignupForm = Ext.extend Ext.form.FormPanel,
       url: '/users.json'
       items: [ fields, saveButton ]
       listeners:
-        submit: (form, object) ->
-          console.log 'creating a new user account...'
         exception: (form, object) ->
-          console.log object
-          fieldset = this.down('#signupFormFieldset');
+          fieldset = @down('#signupFormFieldset');
           fieldset.setInstructions(object.message);
+        submit: (form, object) ->
+          Ext.dispatch
+            controller: 'welcome'
+            action: 'index'
+            historyUrl: 'welcome'
 
     App.views.SignupForm.superclass.initComponent.call(this)
 

@@ -15,8 +15,8 @@ App.views.LoginCard = Ext.extend Ext.Panel,
     Ext.apply this,
       dockedItems: [ titleBar ]
       items: [
-        { xtype: 'App.views.SignupForm',  id: 'signupForm' }
         { xtype: 'App.views.LoginForm',   id: 'loginForm' }
+        { xtype: 'App.views.SignupForm',  id: 'signupForm' }
       ]
 
       listeners:
