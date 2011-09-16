@@ -2,11 +2,18 @@ App.views.Dashboard = Ext.extend Ext.Panel,
 
   initComponent: () ->
 
+    logoutButton =
+      text: "Log out"
+      handler: ->
+        Ext.dispatch
+          controller: 'login'
+          action: 'logout'
+
     titlebar =
       id: 'dashboardTitlebar'
       xtype: 'toolbar'
       title: 'Dashboard'
-      items: []
+      items: [ logoutButton ]
 
     Ext.apply this,
       scroll: 'vertical'

@@ -19,3 +19,9 @@ Ext.regController 'login',
           App.views.viewport.reveal('loginCardPanel')
       failure: (response, params) ->
         console.log "the current user route doesn't work!"
+
+  logout: ->
+    Ext.Ajax.request
+      url: '/logout.json'
+      success: (response, params) ->
+        console.log 'logged out!'
