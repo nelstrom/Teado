@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  priority: MyString
+  assigned_to: 1
+  due_at: 2011-09-26 09:55:11
+
+two:
+  name: MyString
+  priority: MyString
+  assigned_to: 1
+  due_at: 2011-09-26 09:55:11

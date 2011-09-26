@@ -1,5 +1,7 @@
 SenchaOnRails::Application.routes.draw do
 
+  resources :tasks
+
   get "welcome/index"
 
   get 'signup' => 'users#new', :as => :signup
