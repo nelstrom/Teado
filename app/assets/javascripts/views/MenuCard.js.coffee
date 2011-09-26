@@ -12,8 +12,12 @@ App.views.MenuCard = Ext.extend Ext.TabPanel,
           id:       'dashboardPanel'
           iconCls:  'home'
         }
+        {
+          xtype:    'App.views.TagsList'
+          title:    'tags'
+          iconCls:  'tags'
+        }
         { xtype: 'panel', iconCls: 'tasks', title: 'tasks' }
-        { xtype: 'panel', iconCls: 'tags', title: 'tags' }
         { xtype: 'panel', iconCls: 'profile', title: 'profile' }
       ]
 

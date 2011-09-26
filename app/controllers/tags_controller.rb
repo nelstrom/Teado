@@ -6,7 +6,7 @@ class TagsController < ApplicationController
 
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render :json => @tags }
+      format.json { render :json => { :tags => @tags} }
     end
   end
 
