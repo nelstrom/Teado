@@ -15,18 +15,29 @@
     <%= f.label :name %><br />
     <%= f.text_field :name %>
   </div>
+
   <div class="field">
     <%= f.label :priority %><br />
-    <%= f.text_field :priority %>
+    <%= f.select :priority, %w{normal high} %>
   </div>
+
   <div class="field">
     <%= f.label :assigned_to %><br />
-    <%= f.number_field :assigned_to %>
+    <%= f.select :assigned_to, assigned_to_options %>
   </div>
+
   <div class="field">
     <%= f.label :due_at %><br />
     <%= f.datetime_select :due_at %>
   </div>
+
+  <% for tag in Tag.all %>
+    <div>
+      <%= check_box_tag "task[tag_ids][]", tag.id, @task.tags.include?(tag) %>
+      <%= tag.name %>
+    </div>
+  <% end %>
+
   <div class="actions">
     <%= f.submit %>
   </div>

@@ -12,15 +12,15 @@
 
 ActiveRecord::Schema.define(:version => 20110926090021) do
 
-  create_table "tag_tasks", :force => true do |t|
-    t.integer  "tag_id"
-    t.integer  "task_id"
+  create_table "tags", :force => true do |t|
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "tags", :force => true do |t|
-    t.string   "name"
+  create_table "tags_tasks", :id => false, :force => true do |t|
+    t.integer  "tag_id"
+    t.integer  "task_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
