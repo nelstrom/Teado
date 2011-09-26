@@ -5,7 +5,7 @@ App.views.Viewport = Ext.extend Ext.Panel,
   initComponent: ->
     Ext.apply this,
       items: [
-        { xtype: 'App.views.Dashboard',  id: 'dashboardPanel' }
+        { xtype: 'App.views.MenuCard',  id: 'menuCardPanel' }
         { xtype: 'App.views.LoginCard',  id: 'loginCardPanel' }
       ]
 
