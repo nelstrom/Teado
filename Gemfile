@@ -7,7 +7,10 @@ gem 'json'
 gem 'bcrypt-ruby', :require => 'bcrypt'
 gem 'mocha', :group => :test
 
-gem 'nifty-generators', :group => :development
+group :development do
+  gem 'nifty-generators'
+  gem 'ruby-debug'
+end
 
 # Gems used only for assets and not required
 # in production environments by default.
