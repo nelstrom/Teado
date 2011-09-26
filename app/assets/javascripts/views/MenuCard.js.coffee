@@ -6,6 +6,7 @@ App.views.MenuCard = Ext.extend Ext.TabPanel,
       tabBar:
         dock: 'bottom'
         layout: { pack: 'center' }
+
       items: [
         {
           xtype:    'App.views.Dashboard'
@@ -13,7 +14,8 @@ App.views.MenuCard = Ext.extend Ext.TabPanel,
           iconCls:  'home'
         }
         {
-          xtype:    'App.views.TagsList'
+          xtype:    'App.views.TagsPacket'
+          id:       'tagsPacket'
           title:    'tags'
           iconCls:  'tags'
         }
@@ -22,5 +24,9 @@ App.views.MenuCard = Ext.extend Ext.TabPanel,
       ]
 
     App.views.MenuCard.superclass.initComponent.call(this)
+
+  reveal: (target) ->
+    @setActiveItem target,
+      { type: 'slide', duration: 500 }
 
 Ext.reg('App.views.MenuCard', App.views.MenuCard)
