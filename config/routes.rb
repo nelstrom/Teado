@@ -1,5 +1,7 @@
 SenchaOnRails::Application.routes.draw do
 
+  resources :tags
+
   resources :tasks
 
   get "welcome/index"
