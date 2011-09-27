@@ -15,7 +15,8 @@ App.views.TagsForm = Ext.extend Ext.form.FormPanel,
     saveButton =
       xtype: 'button'
       text: 'save'
-      handler: => @submit()
+      handler: @onSaveAction
+      scope: this
 
     Ext.apply this,
       scroll: 'vertical'
@@ -28,8 +29,6 @@ App.views.TagsForm = Ext.extend Ext.form.FormPanel,
     Ext.dispatch
       controller : 'Tags'
       action     : 'create'
-      data       : @getValues()
-      record     : @getRecord()
       form       : this
 
 Ext.reg('App.views.TagsForm', App.views.TagsForm);
