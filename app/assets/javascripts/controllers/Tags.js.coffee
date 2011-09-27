@@ -58,3 +58,18 @@ Ext.regController 'Tags'
         console.log 'tag creation failed'
         console.log 'result: ', result
     )
+
+  destroy: (params) ->
+    controller = this
+    model = params.form.getRecord()
+
+    params.form.submit(
+      url: "/tags/#{model.data.id}.json"
+      method: "DELETE"
+      success: ->
+        console.log 'tag was successfully destroyed'
+        controller.store.load()
+        controller.index()
+      failure: (form, result) ->
+        console.log 'tag destruction failed'
+    )

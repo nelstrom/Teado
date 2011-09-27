@@ -78,7 +78,8 @@ class TagsController < ApplicationController
 
     respond_to do |format|
       format.html { redirect_to tags_url }
-      format.json { head :ok }
+      format.json { render :json => { :success => true } }
+      # format.json { head :ok } # <- this is what the rails scaffold generates
     end
   end
 end

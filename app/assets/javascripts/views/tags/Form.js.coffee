@@ -70,7 +70,7 @@ App.views.TagsForm = Ext.extend Ext.form.FormPanel,
           else
             titlebar.setTitle('Update tag');
             saveButton.setText('update');
-            deleteButton.hide();
+            deleteButton.show();
 
         deactivate: -> @resetForm()
 
@@ -101,6 +101,12 @@ App.views.TagsForm = Ext.extend Ext.form.FormPanel,
     Ext.dispatch
       controller : 'Tags'
       action     : 'index'
+
+  onDeleteAction: ->
+    Ext.dispatch
+      controller : 'Tags'
+      action     : 'destroy'
+      form       : this
 
   resetForm: -> @reset()
 
