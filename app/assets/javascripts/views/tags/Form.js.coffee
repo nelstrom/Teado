@@ -20,7 +20,6 @@ App.views.TagsForm = Ext.extend Ext.form.FormPanel,
         {
           xtype: 'textfield'
           name : 'tag[name]'
-          # name : 'name'
           label: 'name'
         }
       ]
@@ -77,34 +76,19 @@ App.views.TagsForm = Ext.extend Ext.form.FormPanel,
 
     App.views.TagsForm.superclass.initComponent.call(this);
 
-  loadRecord: (instance, prefix, suffix) ->
-    console.log 'overriding loadRecord...'
-    # prefix ||= "tags["
-    # suffix ||= "]"
-    window.data = instance.data
-    # {id: 3, name: "cookery"}
-    # =>
-    # { tag[id]: 3, tag[name]: "cookery" }
-    console.log "instance.data: ", instance.data
-    namespacedData = {}
-    for key of instance.data
-      console.log key
-      namespacedData["tag[#{key}]"] = instance.data[key]
-    console.log "namespacedData: ", namespacedData
+  loadRecord: (instance) ->
+    App.views.TagsForm.superclass.loadRecord.call(this, instance);
 
     if (instance && instance.data)
+      namespacedData = {}
+      for key of instance.data
+        namespacedData["tag[#{key}]"] = instance.data[key]
+
       @setValues(namespacedData)
-      # @setValues( {"tag[name]": 'it works!'} )  # <- this works!
-      # @setValues( {tag: {name: 'it works!'}} )  # <- this doesn't work!
       @record = instance
+
     return this;
 
-    # the code that we are overriding
-    if (instance && instance.data)
-      @setValues(instance.data)
-      @record = instance
-    return this;
-    # App.views.TagsForm.superclass.loadRecord.call(this, instance);
 
   onSaveAction: ->
     Ext.dispatch
