@@ -30,6 +30,7 @@ App.views.TagsForm = Ext.extend Ext.form.FormPanel,
       ui: 'confirm'
       text: 'save'
       handler: @onSaveAction
+      scope: this
 
     deleteButton =
       id: 'tagFormDeleteButton'
@@ -90,10 +91,10 @@ App.views.TagsForm = Ext.extend Ext.form.FormPanel,
 
 
   onSaveAction: ->
-    # 'this' is the saveButton
+    button = @down('#tagFormSaveButton')
     Ext.dispatch
       controller : 'Tags'
-      action     : @getText()
+      action     : button.getText()
       form       : this
 
   onCancelAction: ->
