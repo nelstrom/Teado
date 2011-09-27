@@ -33,8 +33,23 @@ Ext.regController 'Tags'
 
   create: (params) ->
     controller = this
-    console.log "#create form: ", params.form
     params.form.submit(
+      success: ->
+        console.log 'tag created successfully'
+        controller.store.load()
+        controller.index()
+      failure: (form, result) ->
+        console.log 'tag creation failed'
+        console.log 'result: ', result
+    )
+
+  update: (params) ->
+    controller = this
+    model = params.form.getRecord()
+
+    params.form.submit(
+      url: "/tags/#{model.data.id}.json"
+      method: "PUT"
       success: ->
         console.log 'tag created successfully'
         controller.store.load()
