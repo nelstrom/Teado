@@ -76,6 +76,10 @@ App.views.TagsForm = Ext.extend Ext.form.FormPanel,
 
     App.views.TagsForm.superclass.initComponent.call(this);
 
+  loadRecord: (instance, prefix) ->
+    console.log 'overriding loadRecord...'
+    App.views.TagsForm.superclass.loadRecord.call(this, instance);
+
   onSaveAction: ->
     Ext.dispatch
       controller : 'Tags'
