@@ -1,6 +1,18 @@
 App.views.TagsForm = Ext.extend Ext.form.FormPanel,
 
   initComponent: ->
+    cancelButton =
+      text: 'cancel'
+      ui: 'back'
+      handler: this.onCancelAction
+      scope: this
+
+    titlebar =
+      id: 'tagsFormTitlebar'
+      xtype: 'toolbar'
+      title: 'Create tag'
+      items: [ cancelButton ]
+
     fields =
       xtype: 'fieldset'
       title: 'Tag'
@@ -21,6 +33,7 @@ App.views.TagsForm = Ext.extend Ext.form.FormPanel,
     Ext.apply this,
       scroll: 'vertical'
       url: '/tags.json'
+      dockedItems: [ titlebar ]
       items: [ fields, saveButton ]
 
     App.views.TagsForm.superclass.initComponent.call(this);
@@ -30,5 +43,10 @@ App.views.TagsForm = Ext.extend Ext.form.FormPanel,
       controller : 'Tags'
       action     : 'create'
       form       : this
+
+  onCancelAction: ->
+    Ext.dispatch
+      controller : 'Tags'
+      action     : 'index'
 
 Ext.reg('App.views.TagsForm', App.views.TagsForm);
