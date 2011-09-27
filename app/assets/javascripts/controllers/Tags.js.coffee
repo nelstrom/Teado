@@ -15,5 +15,7 @@ Ext.regController 'Tags'
   create: (params) ->
     params.form.submit(
       success: -> console.log 'tag created successfully'
-      failure: -> console.log 'tag creation failed'
+      failure: (form, result) ->
+        console.log 'tag creation failed'
+        console.log 'result: ', result
     )
