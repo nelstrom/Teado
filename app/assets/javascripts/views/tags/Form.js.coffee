@@ -8,7 +8,7 @@ App.views.TagsForm = Ext.extend Ext.form.FormPanel,
       scope: this
 
     titlebar =
-      id: 'tagsFormTitlebar'
+      id: 'tagFormTitlebar'
       xtype: 'toolbar'
       title: 'Create tag'
       items: [ cancelButton ]
@@ -25,17 +25,46 @@ App.views.TagsForm = Ext.extend Ext.form.FormPanel,
       ]
 
     saveButton =
+      id: 'tagFormSaveButton'
       xtype: 'button'
+      ui: 'confirm'
       text: 'save'
       handler: @onSaveAction
       scope: this
 
+    deleteButton =
+      id: 'tagFormDeleteButton'
+      text: 'delete'
+      ui: 'decline'
+      handler: @onDeleteAction
+      scope: this
+
+    buttonbar =
+      xtype: 'toolbar'
+      dock: 'bottom'
+      items: [deleteButton, {xtype: 'spacer'}, saveButton]
+
     Ext.apply this,
       scroll: 'vertical'
       url: '/tags.json'
-      dockedItems: [ titlebar ]
-      items: [ fields, saveButton ]
+      dockedItems: [ titlebar, buttonbar ]
+      items: [ fields ]
       listeners:
+        beforeactivate: ->
+          deleteButton = @down('#tagFormDeleteButton')
+          saveButton = @down('#tagFormSaveButton')
+          titlebar = @down('#tagFormTitlebar')
+          model = @getRecord()
+
+          if model.phantom
+            titlebar.setTitle('Create tag');
+            saveButton.setText('create');
+            deleteButton.hide();
+          else
+            titlebar.setTitle('Update tag');
+            saveButton.setText('update');
+            deleteButton.hide();
+
         deactivate: -> @resetForm()
 
     App.views.TagsForm.superclass.initComponent.call(this);
