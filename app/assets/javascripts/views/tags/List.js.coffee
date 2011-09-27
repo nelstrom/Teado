@@ -2,7 +2,6 @@ App.views.TagsList = Ext.extend Ext.Panel,
 
   initComponent: ->
     addButton =
-      itemId: 'addButton'
       iconCls: 'add'
       iconMask: true
       ui: 'plain'

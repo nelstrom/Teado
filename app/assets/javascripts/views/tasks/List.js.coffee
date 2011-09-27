@@ -4,12 +4,12 @@ App.views.TasksList = Ext.extend Ext.Panel,
       iconCls: 'add'
       iconMask: true
       ui: 'plain'
-      handler: @onAddAction
+      handler: this.onAddAction
       scope: this
 
     titleBar =
       xtype: 'toolbar'
-      title: 'Tags'
+      title: 'Tasks'
       items: [ {xtype: 'spacer'}, addButton ]
 
     list =
@@ -19,9 +19,13 @@ App.views.TasksList = Ext.extend Ext.Panel,
 
     Ext.apply this,
       layout: 'fit'
-      items: [list]
       dockedItems: [ titleBar ]
-
+      items: [list]
     App.views.TasksList.superclass.initComponent.call(this)
+
+  onAddAction: ->
+    Ext.dispatch
+      controller: 'Tasks'
+      action: 'newForm'
 
 Ext.reg('App.views.TasksList', App.views.TasksList)
