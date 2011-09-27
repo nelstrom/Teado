@@ -35,6 +35,8 @@ App.views.TagsForm = Ext.extend Ext.form.FormPanel,
       url: '/tags.json'
       dockedItems: [ titlebar ]
       items: [ fields, saveButton ]
+      listeners:
+        deactivate: -> @resetForm()
 
     App.views.TagsForm.superclass.initComponent.call(this);
 
@@ -48,5 +50,7 @@ App.views.TagsForm = Ext.extend Ext.form.FormPanel,
     Ext.dispatch
       controller : 'Tags'
       action     : 'index'
+
+  resetForm: -> @reset()
 
 Ext.reg('App.views.TagsForm', App.views.TagsForm);
