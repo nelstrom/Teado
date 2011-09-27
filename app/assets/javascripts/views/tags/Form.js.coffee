@@ -19,7 +19,7 @@ App.views.TagsForm = Ext.extend Ext.form.FormPanel,
       items: [
         {
           xtype: 'textfield'
-          name : 'tag[name]'
+          name : 'name'
           label: 'name'
         }
       ]
