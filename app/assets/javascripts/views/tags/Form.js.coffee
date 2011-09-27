@@ -51,6 +51,7 @@ App.views.TagsForm = Ext.extend Ext.form.FormPanel,
       items: [ fields ]
       listeners:
         beforesubmit: (form, values, options) ->
+          # TODO: delete this (checking things still work)
           form.setValues(
             tag: values
           )
