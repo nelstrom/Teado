@@ -50,6 +50,13 @@ App.views.TagsForm = Ext.extend Ext.form.FormPanel,
       dockedItems: [ titlebar, buttonbar ]
       items: [ fields ]
       listeners:
+        beforesubmit: (form, values, options) ->
+          form.setValues(
+            tag: values
+          )
+          window.form = form
+          console.log "#beforesubmit form: ", form
+
         beforeactivate: ->
           deleteButton = @down('#tagFormDeleteButton')
           saveButton = @down('#tagFormSaveButton')
