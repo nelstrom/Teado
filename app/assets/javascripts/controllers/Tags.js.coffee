@@ -25,23 +25,15 @@ Ext.regController 'Tags'
     form = packet.getComponent("tagsForm")
     tagForm = App.views.viewport.down('#tagsForm');
 
-    console.log "form: ", form
-    console.log "tagForm: ", tagForm
-
     # Load the model into the form:
     model = @store.getAt(params.index)
-    window.form = form
-    window.model = model
-
     form.load(model)
-
-    console.log "model: ", model
-
     # Reveal the form:
     packet.setActiveItem('tagsForm')
 
   create: (params) ->
     controller = this
+    console.log "#create form: ", params.form
     params.form.submit(
       success: ->
         console.log 'tag created successfully'
