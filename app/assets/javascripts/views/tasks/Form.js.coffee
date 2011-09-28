@@ -23,6 +23,7 @@ App.views.TasksForm = Ext.extend Ext.form.FormPanel,
         },
         {
           xtype: 'selectfield'
+          id: 'tasksFormBucketSelect'
           name : 'task[bucket]'
           label: 'due'
           options: [
@@ -80,10 +81,10 @@ App.views.TasksForm = Ext.extend Ext.form.FormPanel,
 
         deactivate: -> @resetForm()
 
-    App.views.TasksForm.superclass.initComponent.call(this);
+    App.views.TasksForm.superclass.initComponent.call(this)
 
   loadRecord: (instance) ->
-    App.views.TasksForm.superclass.loadRecord.call(this, instance);
+    App.views.TasksForm.superclass.loadRecord.call(this, instance)
 
     if (instance && instance.data)
       namespacedData = {}
@@ -93,7 +94,7 @@ App.views.TasksForm = Ext.extend Ext.form.FormPanel,
       @setValues(namespacedData)
       @record = instance
 
-    return this;
+    return this
 
   onSaveAction: ->
     button = @down('#taskFormSaveButton')
@@ -115,4 +116,4 @@ App.views.TasksForm = Ext.extend Ext.form.FormPanel,
 
   resetForm: -> @reset()
 
-Ext.reg('App.views.TasksForm', App.views.TasksForm);
+Ext.reg('App.views.TasksForm', App.views.TasksForm)
