@@ -111,4 +111,4 @@ App.views.TagsForm = Ext.extend Ext.form.FormPanel,
 
   resetForm: -> @reset()
 
-Ext.reg('App.views.TagsForm', App.views.TagsForm);
+Ext.reg('App.views.TagsForm', App.views.TagsForm)
