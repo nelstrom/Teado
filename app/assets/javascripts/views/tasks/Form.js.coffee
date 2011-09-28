@@ -123,7 +123,7 @@ App.views.TasksForm = Ext.extend Ext.form.FormPanel,
       fieldset.add
         value: item.data.id
         label: item.data.name
-        checked: false
+        checked: false # <- calculate this by comparing with model
 
     fieldset.doLayout()
 
