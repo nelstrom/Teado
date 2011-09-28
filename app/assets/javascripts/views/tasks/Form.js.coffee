@@ -116,6 +116,7 @@ App.views.TasksForm = Ext.extend Ext.form.FormPanel,
   resetForm: -> @reset()
 
   buildTagCheckboxes: ->
+    model = @getRecord()
     fieldset = App.views.viewport.down('#taskFormTagfields')
     fieldset.removeAll()
 
@@ -123,7 +124,7 @@ App.views.TasksForm = Ext.extend Ext.form.FormPanel,
       fieldset.add
         value: item.data.id
         label: item.data.name
-        checked: false # <- calculate this by comparing with model
+        checked: model.isTaggedAs(item.data.name)
 
     fieldset.doLayout()
 
