@@ -32,4 +32,12 @@ describe Task do
     task.due_at.should == Time.zone.now.end_of_week
   end
 
+  describe "as_json" do
+    it "includes the virtual 'bucket' attribute" do
+      json = Factory(:task).as_json
+      json.keys.should include("bucket")
+      json["bucket"].should == 'asap'
+    end
+  end
+
 end

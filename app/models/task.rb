@@ -7,6 +7,11 @@ class Task < ActiveRecord::Base
     !!self.completed_at
   end
 
+  def as_json(options={})
+    defaults = { :methods => "bucket" }
+    super(defaults.merge(options))
+  end
+
   def bucket=(time)
     time = "asap" if time.blank?
     self.due_at = case time
