@@ -16,6 +16,9 @@ App.views.TasksList = Ext.extend Ext.Panel,
       xtype: 'list'
       itemTpl: '{name}'
       store: App.stores.tasks
+      listeners:
+        scope: this
+        itemtap: @onItemtapAction
 
     Ext.apply this,
       layout: 'fit'
@@ -27,5 +30,12 @@ App.views.TasksList = Ext.extend Ext.Panel,
     Ext.dispatch
       controller: 'Tasks'
       action: 'newForm'
+
+  onItemtapAction: (list, index, item, e) ->
+    Ext.dispatch(
+      controller: 'Tasks'
+      action: 'editForm'
+      index: index
+    )
 
 Ext.reg('App.views.TasksList', App.views.TasksList)

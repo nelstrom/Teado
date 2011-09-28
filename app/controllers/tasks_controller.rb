@@ -61,7 +61,8 @@ class TasksController < ApplicationController
     respond_to do |format|
       if @task.update_attributes(params[:task])
         format.html { redirect_to @task, :notice => 'Task was successfully updated.' }
-        format.json { head :ok }
+        format.json { render :json => { :success => true } }
+        # format.json { head :ok } # <- this is what the rails scaffold generates
       else
         format.html { render :action => "edit" }
         format.json { render :json => @task.errors, :status => :unprocessable_entity }

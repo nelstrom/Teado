@@ -20,9 +20,37 @@ Ext.regController 'Tasks'
     # Reveal the form:
     packet.setActiveItem('tasksForm')
 
+  editForm:(params) ->
+    menucard = App.views.viewport.getComponent("menuCardPanel")
+    packet = menucard.getComponent("tasksPacket")
+    form = packet.getComponent("tasksForm")
+    taskForm = App.views.viewport.down('#tasksForm');
+
+    # Load the model into the form:
+    model = @store.getAt(params.index)
+    form.load(model)
+    # Reveal the form:
+    packet.setActiveItem('tasksForm')
+
   create: (params) ->
     controller = this
     params.form.submit(
+      success: ->
+        console.log 'task created successfully'
+        controller.store.load()
+        controller.index()
+      failure: (form, result) ->
+        console.log 'task creation failed'
+        console.log 'result: ', result
+    )
+
+  update: (params) ->
+    controller = this
+    model = params.form.getRecord()
+
+    params.form.submit(
+      url: "/tasks/#{model.data.id}.json"
+      method: "PUT"
       success: ->
         console.log 'task created successfully'
         controller.store.load()

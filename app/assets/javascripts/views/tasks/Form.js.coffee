@@ -85,8 +85,7 @@ App.views.TasksForm = Ext.extend Ext.form.FormPanel,
     button = @down('#taskFormSaveButton')
     Ext.dispatch
       controller : 'Tasks'
-      action     : 'create'
-      # action     : button.getText()
+      action     : button.getText()
       form       : this
 
   onCancelAction: ->
