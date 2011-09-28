@@ -60,3 +60,17 @@ Ext.regController 'Tasks'
         console.log 'result: ', result
     )
 
+  destroy: (params) ->
+    controller = this
+    model = params.form.getRecord()
+
+    params.form.submit(
+      url: "/tasks/#{model.data.id}.json"
+      method: "DELETE"
+      success: ->
+        console.log 'task was successfully destroyed'
+        controller.store.load()
+        controller.index()
+      failure: (form, result) ->
+        console.log 'task destruction failed'
+    )
