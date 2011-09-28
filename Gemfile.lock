@@ -45,6 +45,8 @@ GEM
     erubis (2.7.0)
     execjs (1.2.4)
       multi_json (~> 1.0)
+    factory_girl (2.1.0)
+    ffaker (1.8.1)
     hike (1.2.1)
     i18n (0.6.0)
     json (1.5.4)
@@ -130,6 +132,8 @@ PLATFORMS
 DEPENDENCIES
   bcrypt-ruby
   coffee-rails (~> 3.1.0)
+  factory_girl
+  ffaker
   json
   mocha
   nifty-generators

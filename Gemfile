@@ -11,6 +11,8 @@ group :development do
   gem 'nifty-generators'
   gem 'ruby-debug'
   gem 'rspec-rails'
+  gem 'factory_girl'
+  gem 'ffaker'
 end
 
 # Gems used only for assets and not required
