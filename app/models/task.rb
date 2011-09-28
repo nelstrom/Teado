@@ -3,7 +3,12 @@ class Task < ActiveRecord::Base
   has_and_belongs_to_many :tags
   belongs_to :user
 
-  before_save :set_due_date
+  before_create :set_due_date
+  before_update :set_due_date, :unless => :completed?
+
+  def completed?
+    !!self.completed_at
+  end
   
   private
 
