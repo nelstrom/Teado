@@ -1,4 +1,5 @@
 /*
  *= require sencha-touch
 */
-#tagsList .x-mask { width: 100% !important; height: 100% !important; }
+#tagsList .x-mask,
+#tasksList .x-mask { width: 100% !important; height: 100% !important; }
