@@ -26,15 +26,7 @@ App.views.TasksForm = Ext.extend Ext.form.FormPanel,
           id: 'tasksFormBucketSelect'
           name : 'task[bucket]'
           label: 'due'
-          options: [
-            { text: 'As soon as possible', value: 'asap' }
-            { text: 'Today', value: 'due_today' }
-            { text: 'Tomorrow', value: 'due_tomorrow' }
-            { text: 'This week', value: 'due_this_week' }
-            { text: 'Next week', value: 'due_next_week' }
-            { text: 'Sometime later', value: 'due_later' }
-            { text: 'Overdue', value: 'overdue' }
-          ]
+          store: App.stores.taskbuckets
         }
       ]
 

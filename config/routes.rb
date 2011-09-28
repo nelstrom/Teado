@@ -4,6 +4,7 @@ SenchaOnRails::Application.routes.draw do
 
   resources :tasks
 
+  get "config" => 'config#index', :as => :config
   get "welcome/index"
 
   get 'signup' => 'users#new', :as => :signup
