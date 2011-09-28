@@ -32,7 +32,6 @@ ActiveRecord::Schema.define(:version => 20110928113616) do
     t.datetime "due_at"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "bucket"
     t.datetime "completed_at"
   end
 
