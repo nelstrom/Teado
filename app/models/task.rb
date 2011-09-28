@@ -8,7 +8,10 @@ class Task < ActiveRecord::Base
   end
 
   def as_json(options={})
-    defaults = { :methods => "bucket" }
+    defaults = {
+      :methods => :bucket,
+      :include => :tags
+    }
     super(defaults.merge(options))
   end
 

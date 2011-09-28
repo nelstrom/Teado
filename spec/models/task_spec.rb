@@ -35,8 +35,19 @@ describe Task do
   describe "as_json" do
     it "includes the virtual 'bucket' attribute" do
       json = Factory(:task).as_json
-      json.keys.should include("bucket")
-      json["bucket"].should == 'asap'
+      json.keys.should include(:bucket)
+      json[:bucket].should == 'asap'
+    end
+
+    it "includes any associated tags" do
+      task = Factory(:task)
+      tag = Factory(:tag)
+      task.tags << tag
+
+      json = task.as_json
+      json.keys.should include(:tags)
+      json[:tags].size.should == 1
+      json[:tags].first.should == tag.as_json
     end
   end
 
