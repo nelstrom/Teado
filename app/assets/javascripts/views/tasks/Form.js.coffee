@@ -12,7 +12,7 @@ App.views.TasksForm = Ext.extend Ext.form.FormPanel,
       title: 'Create task'
       items: [ cancelButton ]
 
-    fields =
+    taskfields =
       xtype: 'fieldset'
       title: 'Task'
       items: [
@@ -29,6 +29,12 @@ App.views.TasksForm = Ext.extend Ext.form.FormPanel,
           store: App.stores.taskbuckets
         }
       ]
+
+    tagfields =
+      xtype: 'fieldset'
+      id: 'taskFormTagfields'
+      title: 'Tag it'
+      defaults: { xtype: 'checkboxfield', name: 'task[tag_ids][]' }
 
     saveButton =
       id: 'taskFormSaveButton'
@@ -54,7 +60,7 @@ App.views.TasksForm = Ext.extend Ext.form.FormPanel,
       scroll: 'vertical'
       url: '/tasks.json'
       dockedItems: [ titlebar, buttonbar ]
-      items: [ fields ]
+      items: [ taskfields, tagfields ]
       listeners:
         beforeactivate: ->
           deleteButton = @down('#taskFormDeleteButton')
@@ -62,6 +68,7 @@ App.views.TasksForm = Ext.extend Ext.form.FormPanel,
           titlebar = @down('#taskFormTitlebar')
           model = @getRecord()
 
+          @buildTagCheckboxes()
           if model.phantom
             titlebar.setTitle('Create task')
             saveButton.setText('create')
@@ -107,5 +114,17 @@ App.views.TasksForm = Ext.extend Ext.form.FormPanel,
       form       : this
 
   resetForm: -> @reset()
+
+  buildTagCheckboxes: ->
+    fieldset = App.views.viewport.down('#taskFormTagfields')
+    fieldset.removeAll()
+
+    Ext.each App.stores.tags.data.items, (item) ->
+      fieldset.add
+        value: item.data.id
+        label: item.data.name
+        checked: false
+
+    fieldset.doLayout()
 
 Ext.reg('App.views.TasksForm', App.views.TasksForm)
