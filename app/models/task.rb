@@ -13,6 +13,7 @@ class Task < ActiveRecord::Base
   private
 
   def set_due_date
+    self.bucket = "asap" if self.bucket.blank?
     self.due_at = case self.bucket
     when "overdue"
       self.due_at || Time.zone.now.midnight.yesterday

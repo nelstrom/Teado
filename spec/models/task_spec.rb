@@ -15,6 +15,15 @@ describe Task do
     task.due_at.should == Time.zone.now.end_of_week
   end
 
+  ['asap', '', nil].each do |value|
+    it "sets the due date to nil when the 'bucket' text is #{value}" do
+      task = Factory(:task, :bucket => value)
+      task.errors.should be_empty
+      task.bucket.should == "asap"
+      task.due_at.should == nil
+    end
+  end
+
   it "updates the due date when assigned to a new 'bucket'" do
     task = Factory(:task, :due_at => Time.now.midnight.tomorrow, :bucket => "due_tomorrow")
     task.update_attributes( { :bucket => "due_this_week" } )
