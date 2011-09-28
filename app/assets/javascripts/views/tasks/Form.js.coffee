@@ -119,7 +119,7 @@ App.views.TasksForm = Ext.extend Ext.form.FormPanel,
     fieldset = App.views.viewport.down('#taskFormTagfields')
     fieldset.removeAll()
 
-    Ext.each App.stores.tags.data.items, (item) ->
+    for item in App.stores.tags.data.items
       fieldset.add
         value: item.data.id
         label: item.data.name
