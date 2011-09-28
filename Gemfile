@@ -10,6 +10,7 @@ gem 'mocha', :group => :test
 group :development do
   gem 'nifty-generators'
   gem 'ruby-debug'
+  gem 'rspec-rails'
 end
 
 # Gems used only for assets and not required
