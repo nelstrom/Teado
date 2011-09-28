@@ -19,3 +19,16 @@ Ext.regController 'Tasks'
     form.load(model)
     # Reveal the form:
     packet.setActiveItem('tasksForm')
+
+  create: (params) ->
+    controller = this
+    params.form.submit(
+      success: ->
+        console.log 'task created successfully'
+        controller.store.load()
+        controller.index()
+      failure: (form, result) ->
+        console.log 'task creation failed'
+        console.log 'result: ', result
+    )
+
