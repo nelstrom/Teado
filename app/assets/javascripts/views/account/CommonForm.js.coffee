@@ -18,26 +18,27 @@ App.views.CommonForm = Ext.extend Ext.form.FormPanel,
     saveButton =
       xtype: 'button'
       text: pane.buttonText
-      handler: => @submit()
+      handler: => @onSaveAction()
+      scope: this
 
     Ext.apply this,
       scroll: 'vertical'
       items: [ fields, saveButton ]
-      listeners:
-        exception: (form, object) ->
-          fieldset = @down("##{pane.slug}FormFieldset")
-          fieldset.setInstructions(object.message)
-        submit: (form, object) ->
-          @setLoading(true)
-          Ext.dispatch
-            controller: 'dashboard'
-            action: 'index'
-            historyUrl: 'dashboard'
 
     App.views.CommonForm.superclass.initComponent.call(this)
 
+  onSaveAction: ->
+    Ext.dispatch
+      controller : 'userSession'
+      action     : 'create'
+      form       : this
+
+  showErrors: (object) ->
+    fieldset = @down("##{@slug}FormFieldset")
+    fieldset.setInstructions(object.message)
+
   resetForm: ->
-    fieldset = @down("##{this.slug}FormFieldset")
+    fieldset = @down("##{@slug}FormFieldset")
     fieldset.setInstructions(@defaultInstructions)
     @setLoading(false)
     @reset()
