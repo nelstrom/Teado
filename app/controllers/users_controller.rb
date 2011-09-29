@@ -21,7 +21,12 @@ class UsersController < ApplicationController
       if @user.save
         session[:user_id] = @user.id
         format.html { redirect_to root_url, :notice => "Thank you for signing up! You are now logged in." }
-        format.json { render :json => { :success => true } }
+        format.json do
+          render :json => {
+            :success => true,
+            :current_users => [{:username => @user.username, :active => true}]
+          }
+        end
       else
         format.html { render :action => 'new' }
         format.json { render :json => { :success => false, :message => "Your request was declined", :errors => @user.errors } }

@@ -10,9 +10,8 @@ class SessionsController < ApplicationController
         format.html { redirect_to_target_or_default root_url, :notice => "Logged in successfully." }
         format.json do
           render :json => {
-            :user => @user,
-            :current_users => [{:username => @user.username, :active => true}],
-            :success => true
+            :success => true,
+            :current_users => [{:username => @user.username, :active => true}]
           }, :status => :created
         end
       else
