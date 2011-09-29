@@ -24,6 +24,10 @@ Ext.regController 'userSession',
     Ext.Ajax.request
       url: '/logout.json'
       success: (response, params) ->
+        responseObject = JSON.parse(response.responseText)
+        App.stores.currentUser.removeAll()
+        App.stores.currentUser.add(responseObject.current_users[0])
+
         Ext.dispatch
           controller: 'userSession'
           action: 'new'

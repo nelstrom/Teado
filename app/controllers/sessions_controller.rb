@@ -28,7 +28,12 @@ class SessionsController < ApplicationController
     session[:user_id] = nil
     respond_to do |format|
       format.html { redirect_to root_url, :notice => "You have been logged out." }
-      format.json { render :json => {:message => "bye bye"} }
+      format.json do
+          render :json => {
+            :success => true,
+            :current_users => [{:active => false}]
+          }
+      end
     end
   end
 end
