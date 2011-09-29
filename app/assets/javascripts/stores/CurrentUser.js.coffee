@@ -1,9 +1,3 @@
-Ext.regModel 'CurrentUser',
-  fields: [
-    {name: 'active', type: 'boolean'}
-    {name: 'username',  type: 'string'}
-  ]
-
 App.stores.currentUser = new Ext.data.Store
   model: 'CurrentUser'
   autoLoad: true
