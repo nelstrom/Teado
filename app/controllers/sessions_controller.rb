@@ -8,7 +8,13 @@ class SessionsController < ApplicationController
       if @user
         session[:user_id] = @user.id
         format.html { redirect_to_target_or_default root_url, :notice => "Logged in successfully." }
-        format.json { render :json => { :user => @user, :success => true }, :status => :created }
+        format.json do
+          render :json => {
+            :user => @user,
+            :current_users => [{:username => @user.username, :active => true}],
+            :success => true
+          }, :status => :created
+        end
       else
         format.html do
           flash.now[:alert] = "Invalid login or password."

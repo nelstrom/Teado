@@ -21,10 +21,13 @@ App.views.Dashboard = Ext.extend Ext.Panel,
       styleHtmlContent: true
       dockedItems: [ titlebar ]
       listeners:
-        beforeactivate: ->
-          if currentUser = App.stores.currentUser.first()
-            this.update(currentUser.data)
+        beforeactivate: -> @displayWelcomeMessage()
 
     App.views.Dashboard.superclass.initComponent.call(this)
+
+  displayWelcomeMessage: () ->
+    if currentUser = App.stores.currentUser.first()
+      @update(currentUser.data)
+
 
 Ext.reg('App.views.Dashboard', App.views.Dashboard)

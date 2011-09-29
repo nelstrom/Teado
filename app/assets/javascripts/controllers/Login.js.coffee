@@ -6,11 +6,15 @@ Ext.regController 'userSession',
   create: (params) ->
     params.form.setLoading(true)
     params.form.submit(
-      success: ->
+      success: (form, response) ->
+        App.stores.currentUser.removeAll()
+        App.stores.currentUser.add(response.current_users[0])
+
         Ext.dispatch
           controller: 'dashboard'
           action: 'index'
           historyUrl: 'dashboard'
+
       failure: (form, result) ->
         params.form.setLoading(false)
         params.form.showErrors(result)
