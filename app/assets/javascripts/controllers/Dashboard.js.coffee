@@ -13,5 +13,5 @@ Ext.regController 'dashboard',
             historyUrl: 'login'
 
         else
-          App.views.viewport.reveal('dashboardPanel')
+          App.views.viewport.reveal('menuCardPanel')
 
