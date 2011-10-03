@@ -52,11 +52,11 @@ Ext.regController 'Tasks'
       url: "/tasks/#{model.data.id}.json"
       method: "PUT"
       success: ->
-        console.log 'task created successfully'
+        console.log 'task updated successfully'
         controller.store.load()
         controller.index()
       failure: (form, result) ->
-        console.log 'task creation failed'
+        console.log 'task update failed'
         console.log 'result: ', result
     )
 
