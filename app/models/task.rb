@@ -9,10 +9,14 @@ class Task < ActiveRecord::Base
 
   def as_json(options={})
     defaults = {
-      :methods => :bucket,
+      :methods => [:bucket, :done_at],
       :include => :tags
     }
     super(defaults.merge(options))
+  end
+
+  def done_at
+    completed_at.to_i
   end
 
   def bucket=(time)

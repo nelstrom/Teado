@@ -3,7 +3,7 @@ App.models.Task = Ext.regModel 'Task',
     {name: 'id',            type: 'number'}
     {name: 'name',          type: 'string'}
     {name: 'bucket',        type: 'string'}
-    {name: 'completed_at',  type: 'string'}
+    {name: 'done_at',  type: 'date', dateFormat: 'timestamp'}
   ]
 
   hasMany: { model: 'Tag', name: 'tags' }
@@ -15,4 +15,4 @@ App.models.Task = Ext.regModel 'Task',
     return match
 
   isDone: ->
-    @data.completed_at != ""
+    @data.done_at != ""
