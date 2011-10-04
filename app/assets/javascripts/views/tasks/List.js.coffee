@@ -14,7 +14,10 @@ App.views.TasksList = Ext.extend Ext.Panel,
 
     list =
       xtype: 'list'
-      itemTpl: '{name}'
+      itemTpl: [
+        '{name}'
+        '<div class="checkitem">{[values.done_at ? "X" : "-"]}</div>'
+      ]
       store: App.stores.tasks
       listeners:
         scope: this
@@ -32,10 +35,14 @@ App.views.TasksList = Ext.extend Ext.Panel,
       action: 'newForm'
 
   onItemtapAction: (list, index, item, e) ->
-    Ext.dispatch(
-      controller: 'Tasks'
-      action: 'editForm'
-      index: index
-    )
+    if e.getTarget('.checkitem')
+      console.log 'checkitem was tapped'
+    else
+      console.log 'checkitem was not tapped'
+      Ext.dispatch(
+        controller: 'Tasks'
+        action: 'editForm'
+        index: index
+      )
 
 Ext.reg('App.views.TasksList', App.views.TasksList)
