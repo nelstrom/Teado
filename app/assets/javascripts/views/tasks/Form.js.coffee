@@ -119,13 +119,17 @@ App.views.TasksForm = Ext.extend Ext.form.FormPanel,
     model = @getRecord()
     fieldset = App.views.viewport.down('#taskFormTagfields')
     fieldset.removeAll()
+    tags = App.stores.tags.data.items
 
-    for item in App.stores.tags.data.items
-      fieldset.add
-        value: item.data.id
-        label: item.data.name
-        checked: model.isTaggedAs(item.data.name)
+    if tags.length == 0
+      fieldset.hide()
+    else
+      for item in tags
+        fieldset.add
+          value: item.data.id
+          label: item.data.name
+          checked: model.isTaggedAs(item.data.name)
 
-    fieldset.doLayout()
+      fieldset.doLayout()
 
 Ext.reg('App.views.TasksForm', App.views.TasksForm)
