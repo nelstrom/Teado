@@ -1,8 +1,9 @@
 App.models.Task = Ext.regModel 'Task',
   fields: [
-    {name: 'id', type: 'number'}
-    {name: 'name',  type: 'string'}
-    {name: 'bucket',  type: 'string'}
+    {name: 'id',            type: 'number'}
+    {name: 'name',          type: 'string'}
+    {name: 'bucket',        type: 'string'}
+    {name: 'completed_at',  type: 'string'}
   ]
 
   hasMany: { model: 'Tag', name: 'tags' }
@@ -12,3 +13,6 @@ App.models.Task = Ext.regModel 'Task',
     for tag in @tags().data.items
       return true if tag.data.name == name
     return match
+
+  isDone: ->
+    @data.completed_at != ""
