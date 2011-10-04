@@ -1,8 +1,8 @@
 App.models.Task = Ext.regModel 'Task',
   fields: [
-    {name: 'id',            type: 'number'}
-    {name: 'name',          type: 'string'}
-    {name: 'bucket',        type: 'string'}
+    {name: 'id',       type: 'number'}
+    {name: 'name',     type: 'string'}
+    {name: 'bucket',   type: 'string'}
     {name: 'done_at',  type: 'date', dateFormat: 'timestamp'}
   ]
 
