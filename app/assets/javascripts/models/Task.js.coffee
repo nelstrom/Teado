@@ -15,4 +15,4 @@ App.models.Task = Ext.regModel 'Task',
     return match
 
   isDone: ->
-    @data.done_at != ""
+    @data.done_at != null
