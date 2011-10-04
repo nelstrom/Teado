@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
 
   has_many :tags
+  has_many :tasks, :foreign_key => "assigned_to"
 
   # new columns need to be added here to be writable through mass assignment
   attr_accessible :username, :email, :password, :password_confirmation
