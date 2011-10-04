@@ -3,3 +3,9 @@
 */
 #tagsList .x-mask,
 #tasksList .x-mask { width: 100% !important; height: 100% !important; }
+.checkitem {
+  float: right;
+  width: 70px;
+  height: 28px;
+  cursor: pointer;
+}
