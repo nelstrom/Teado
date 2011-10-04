@@ -24,7 +24,7 @@ class TagsController < ApplicationController
   # GET /tags/new
   # GET /tags/new.json
   def new
-    @tag = Tag.new
+    @tag = current_user.tags.build
 
     respond_to do |format|
       format.html # new.html.erb
@@ -40,7 +40,7 @@ class TagsController < ApplicationController
   # POST /tags
   # POST /tags.json
   def create
-    @tag = Tag.new(params[:tag])
+    @tag = current_user.tags.build(params[:tag])
 
     respond_to do |format|
       if @tag.save
