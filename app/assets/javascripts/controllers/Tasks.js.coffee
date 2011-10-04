@@ -74,3 +74,14 @@ Ext.regController 'Tasks'
       failure: (form, result) ->
         console.log 'task destruction failed'
     )
+
+  toggleDone: (params) ->
+    controller = this
+    model = @store.getAt(params.index)
+
+    Ext.Ajax.request
+      url: "/tasks/#{model.data.id}/toggle.json"
+      method: "POST"
+      success: (response, params) ->
+        console.log "#toggleDone posted successfully"
+        controller.store.load()

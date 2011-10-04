@@ -7,6 +7,11 @@ class Task < ActiveRecord::Base
     !!self.completed_at
   end
 
+  def toggle
+    timestamp = completed? ? nil : Time.now
+    update_attributes :completed_at => timestamp
+  end
+
   def as_json(options={})
     defaults = {
       :methods => [:bucket, :done_at],

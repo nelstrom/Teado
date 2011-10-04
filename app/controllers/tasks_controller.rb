@@ -84,4 +84,15 @@ class TasksController < ApplicationController
       # format.json { head :ok } # <- this is what the rails scaffold generates
     end
   end
+
+  # POST /tasks/1/toggle
+  def toggle
+    @task = Task.find(params[:id])
+    @task.toggle
+
+    respond_to do |format|
+      format.html { redirect_to tasks_url }
+      format.json { render :json => { :success => true } }
+    end
+  end
 end

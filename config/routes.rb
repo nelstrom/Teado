@@ -2,7 +2,11 @@ SenchaOnRails::Application.routes.draw do
 
   resources :tags
 
-  resources :tasks
+  resources :tasks do
+    member do
+      post 'toggle'
+    end
+  end
 
   get "config" => 'config#index', :as => :config
   get "welcome/index"
