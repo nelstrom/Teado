@@ -9,6 +9,9 @@ Ext.regController 'userSession',
       success: (form, response) ->
         App.stores.currentUser.removeAll()
         App.stores.currentUser.add(response.current_users[0])
+        # FIXME: find a better way to lazy load these
+        App.stores.tags.load()
+        App.stores.tasks.load()
 
         Ext.dispatch
           controller: 'dashboard'
