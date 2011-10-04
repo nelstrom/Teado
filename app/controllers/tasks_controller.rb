@@ -1,4 +1,6 @@
 class TasksController < ApplicationController
+  before_filter :require_user
+
   # GET /tasks
   # GET /tasks.json
   def index

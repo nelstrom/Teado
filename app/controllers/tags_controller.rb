@@ -1,4 +1,6 @@
 class TagsController < ApplicationController
+  before_filter :require_user
+
   # GET /tags
   # GET /tags.json
   def index
