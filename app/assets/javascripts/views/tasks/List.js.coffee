@@ -36,14 +36,12 @@ App.views.TasksList = Ext.extend Ext.Panel,
 
   onItemtapAction: (list, index, item, e) ->
     if e.getTarget('.checkitem')
-      console.log 'checkitem was tapped'
       Ext.dispatch(
         controller: 'Tasks'
         action: 'toggleDone'
         index: index
       )
     else
-      console.log 'checkitem was not tapped'
       Ext.dispatch(
         controller: 'Tasks'
         action: 'editForm'
