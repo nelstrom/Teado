@@ -1,3 +1,13 @@
+GIT
+  remote: git://github.com/chriseppstein/compass.git
+  revision: 520df2b17331654a771678bdf0cf1222aeda6554
+  tag: v0.12.alpha.0
+  specs:
+    compass (0.12.alpha.0.2fea4c1)
+      chunky_png (~> 1.2)
+      fssm (>= 0.2.7)
+      sass (~> 3.1)
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -33,6 +43,7 @@ GEM
     arel (2.2.1)
     bcrypt-ruby (3.0.0)
     builder (3.0.0)
+    chunky_png (1.2.5)
     coffee-rails (3.1.0)
       coffee-script (>= 2.2.0)
       railties (~> 3.1.0.rc1)
@@ -47,6 +58,7 @@ GEM
       multi_json (~> 1.0)
     factory_girl (2.1.0)
     ffaker (1.8.1)
+    fssm (0.2.7)
     hike (1.2.1)
     i18n (0.6.0)
     json (1.5.4)
@@ -132,6 +144,7 @@ PLATFORMS
 DEPENDENCIES
   bcrypt-ruby
   coffee-rails (~> 3.1.0)
+  compass!
   factory_girl
   ffaker
   json
@@ -140,6 +153,6 @@ DEPENDENCIES
   rails (= 3.1.0)
   rspec-rails
   ruby-debug
-  sass-rails (~> 3.1.0)
+  sass-rails (~> 3.1.0.rc2)
   sqlite3
   uglifier

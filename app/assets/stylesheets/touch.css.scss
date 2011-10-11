@@ -1,3 +1,12 @@
-// Place all the styles related to the touch controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+/*
+ * require sencha-touch
+*/
+@import "compass/reset";
+#tagsList .x-mask,
+#tasksList .x-mask { width: 100% !important; height: 100% !important; }
+.checkitem {
+  float: right;
+  width: 70px;
+  height: 28px;
+  cursor: pointer;
+}
