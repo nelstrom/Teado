@@ -8,6 +8,13 @@ GIT
       fssm (>= 0.2.7)
       sass (~> 3.1)
 
+GIT
+  remote: git://github.com/nelstrom/compass-sencha-touch.git
+  revision: 34344351a813be219f21e4d62d1d50bce484318b
+  specs:
+    sencha-touch (1.1.0)
+      compass (>= 0.12.alpha)
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -154,5 +161,6 @@ DEPENDENCIES
   rspec-rails
   ruby-debug
   sass-rails (~> 3.1.0.rc2)
+  sencha-touch!
   sqlite3
   uglifier

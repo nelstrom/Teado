@@ -20,6 +20,7 @@ end
 group :assets do
   gem 'sass-rails', "  ~> 3.1.0.rc2"
   gem "compass", :git => "git://github.com/chriseppstein/compass.git", :tag => "v0.12.alpha.0"
+  gem "sencha-touch", :git => "git://github.com/nelstrom/compass-sencha-touch.git"
   gem 'coffee-rails', "~> 3.1.0"
   gem 'uglifier'
 end
