@@ -1,24 +1,24 @@
 /*
  * require 'resources/css/sencha-touch'
+ *= require_self
 */
 
-@import '/Users/drew/projects/sencha/sketches/sencha_on_rails/vendor/plugins/compass_extensions/sencha-touch/default/all';
+@import 'compass/_reset';
 
-// You may remove any of the following modules that you
-// do not use in order to create a smaller css file.
-@include sencha-panel;
-@include sencha-buttons;
-@include sencha-sheet;
-@include sencha-picker;
-@include sencha-tabs;
-@include sencha-toolbar;
-@include sencha-toolbar-forms;
-@include sencha-carousel;
-@include sencha-indexbar;
-@include sencha-list;
-@include sencha-layout;
-@include sencha-form;
-@include sencha-msgbox;
+// @import 'sencha-touch/default/all';
+// @include sencha-panel;
+// @include sencha-buttons;
+// @include sencha-sheet;
+// @include sencha-picker;
+// @include sencha-tabs;
+// @include sencha-toolbar;
+// @include sencha-toolbar-forms;
+// @include sencha-carousel;
+// @include sencha-indexbar;
+// @include sencha-list;
+// @include sencha-layout;
+// @include sencha-form;
+// @include sencha-msgbox;
 
 #tagsList .x-mask,
 #tasksList .x-mask { width: 100% !important; height: 100% !important; }
