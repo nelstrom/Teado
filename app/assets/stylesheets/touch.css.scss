@@ -3,22 +3,22 @@
  *= require_self
 */
 
-@import 'compass/_reset';
+// @import 'compass/_reset';
 
-// @import 'sencha-touch/default/all';
-// @include sencha-panel;
-// @include sencha-buttons;
-// @include sencha-sheet;
-// @include sencha-picker;
-// @include sencha-tabs;
-// @include sencha-toolbar;
-// @include sencha-toolbar-forms;
-// @include sencha-carousel;
-// @include sencha-indexbar;
-// @include sencha-list;
-// @include sencha-layout;
-// @include sencha-form;
-// @include sencha-msgbox;
+@import 'sencha-touch/default/all';
+@include sencha-panel;
+@include sencha-buttons;
+@include sencha-sheet;
+@include sencha-picker;
+@include sencha-tabs;
+@include sencha-toolbar;
+@include sencha-toolbar-forms;
+@include sencha-carousel;
+@include sencha-indexbar;
+@include sencha-list;
+@include sencha-layout;
+@include sencha-form;
+@include sencha-msgbox;
 
 #tagsList .x-mask,
 #tasksList .x-mask { width: 100% !important; height: 100% !important; }
