@@ -79,9 +79,15 @@ Ext.regController 'Tasks'
     controller = this
     model = @store.getAt(params.index)
 
-    Ext.Ajax.request
-      url: "/tasks/#{model.data.id}/toggle.json"
-      method: "POST"
-      success: (response, params) ->
-        console.log "#toggleDone posted successfully"
-        controller.store.load()
+    # Update the local copy of the model
+    if model.isDone()
+      model.set('done_at', undefined)
+    else
+      model.set('done_at', new Date())
+
+    # Ext.Ajax.request
+    #   url: "/tasks/#{model.data.id}/toggle.json"
+    #   method: "POST"
+    #   success: (response, params) ->
+    #     console.log "#toggleDone posted successfully"
+    #     controller.store.load()
