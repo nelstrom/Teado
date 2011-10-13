@@ -1,9 +1,6 @@
 /*
- * require 'resources/css/sencha-touch'
  *= require_self
 */
-
-// @import 'compass/_reset';
 
 @import 'sencha-touch/default/all';
 @include sencha-panel;
