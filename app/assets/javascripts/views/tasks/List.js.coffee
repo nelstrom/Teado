@@ -16,7 +16,7 @@ App.views.TasksList = Ext.extend Ext.Panel,
       xtype: 'list'
       itemTpl: [
         '{name}'
-        '<div class="checkitem">{[values.done_at ? "X" : "-"]}</div>'
+        '<div class="checkitem {[values.done_at ? "done" : ""]}">&nbsp;</div>'
       ]
       store: App.stores.tasks
       listeners:

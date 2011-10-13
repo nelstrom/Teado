@@ -20,4 +20,11 @@
   width: 70px;
   height: 28px;
   cursor: pointer;
+  &:after {
+    @include checkmark($form-light);
+  }
+  &.done:after {
+    @include checkmark($active-color);
+  }
 }
+
