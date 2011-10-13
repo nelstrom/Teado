@@ -17,6 +17,7 @@ App.views.TasksList = Ext.extend Ext.Panel,
       itemTpl: [
         '{name}'
         '<div class="checkitem {[values.done_at ? "done" : ""]}">&nbsp;</div>'
+        # FIXME: instead of calling `values.done_at`, use `record.isDone()`
       ]
       store: App.stores.tasks
       listeners:
