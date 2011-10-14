@@ -23,6 +23,9 @@ class Task < ActiveRecord::Base
   def done_at
     completed_at.to_i
   end
+  def done_at=(time)
+    # TODO: set the completed_at field from whatever is passed in
+  end
 
   def bucket=(time)
     time = "asap" if time.blank?
