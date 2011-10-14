@@ -1,4 +1,9 @@
 App.models.Task = Ext.regModel 'Task',
+  proxy:
+    type: 'rest'
+    url: '/tasks'
+    format: 'json'
+
   fields: [
     {name: 'id',       type: 'number'}
     {name: 'name',     type: 'string'}

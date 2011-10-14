@@ -86,7 +86,11 @@ Ext.regController 'Tasks'
       model.set('done_at', new Date())
 
     # Sync with the server
-    model.save()
+    model.save({
+      # task: {done_at: 'blah'}
+      success: -> console.log 'successfully saved model'
+      failure: -> console.log 'failed to save model'
+    })
 
     # Ext.Ajax.request
     #   url: "/tasks/#{model.data.id}/toggle.json"
