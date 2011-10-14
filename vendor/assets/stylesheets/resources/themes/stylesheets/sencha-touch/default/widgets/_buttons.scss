@@ -5,58 +5,58 @@
 @import '../global';
 
 /**
- * @global {measurement} $button-height Default height for buttons.
+ * @var {measurement} $button-height Default height for buttons.
  *
- * @class Ext.Button
+ * @member Ext.Button
  * @xtype button
  */
 $button-height: 1.8em;
 
 /**
- * @global {measurement} $button-radius Default border-radius for buttons.
+ * @var {measurement} $button-radius Default border-radius for buttons.
  *
- * @class Ext.Button
+ * @member Ext.Button
  * @xtype button
  */
 $button-radius: .4em !default;
 
 /**
- * @global {measurement} $button-stroke-weight Default border width for buttons.
+ * @var {measurement} $button-stroke-weight Default border width for buttons.
  *
- * @class Ext.Button
+ * @member Ext.Button
  * @xtype button
  */
 $button-stroke-weight: .1em !default;
 
 /**
- * @global {string} $button-gradient Default gradient for buttons.
+ * @var {string} $button-gradient Default gradient for buttons.
  *
- * @class Ext.Button
+ * @member Ext.Button
  * @xtype button
  * @see background-gradient
  */
 $button-gradient: $base-gradient !default;
 
 /**
- * @global {string} $toolbar-icon-size Default size (width and height) for toolbar icons.
+ * @var {string} $toolbar-icon-size Default size (width and height) for toolbar icons.
  *
- * @class Ext.Button
+ * @member Ext.Button
  * @xtype button
  */
 $toolbar-icon-size: 1.4em !default;
 
 /**
- * @global {boolean} $include-button-uis Optionally disable separate button UIs, including action, confirm, and decline.
+ * @var {boolean} $include-button-uis Optionally disable separate button UIs, including action, confirm, and decline.
  *
- * @class Ext.Button
+ * @member Ext.Button
  * @xtype button
  */
 $include-button-uis: $include-default-uis !default;
 
 /**
- * @global {boolean} $include-button-uis Optionally disable special CSS3 effects on buttons including gradients, text-shadows, and box-shadows.
+ * @var {boolean} $include-button-uis Optionally disable special CSS3 effects on buttons including gradients, text-shadows, and box-shadows.
  *
- * @class Ext.Button
+ * @member Ext.Button
  * @xtype button
  */
 $include-button-highlights: $include-highlights !default;
@@ -65,7 +65,7 @@ $include-button-highlights: $include-highlights !default;
 /**
  * Includes default button styles.
  *
- * @class Ext.Button
+ * @member Ext.Button
  * @xtype button
  * @see background-gradient
  */
@@ -339,19 +339,18 @@ $include-button-highlights: $include-highlights !default;
  * Creates a theme UI for buttons.
  * Also automatically generates UIs for {ui-label}-round and {ui-label}-small.
  *
+ *     // SCSS
+ *     @include sencha-button-ui('secondary', #99A4AE, 'glossy');
+ *     
+ *     // JS
+ *     var cancelBtn = new Ext.Button({text: 'Cancel', ui: 'secondary'});
+ * 
  * @param {string} $ui-label The name of the UI being created.
  *   Can not included spaces or special punctuation (used in class names)
  * @param {color} $color Base color for the UI.
- * @param {string} [$gradient: $button-gradient] Default gradient for the UI.
+ * @param {string} $gradient Default gradient for the UI.
  *
- * @example
- * // SCSS
- * @include sencha-button-ui('secondary', #99A4AE, 'glossy');
- * 
- * // JS
- * var cancelBtn = new Ext.Button({text: 'Cancel', ui: 'secondary'});
- * 
- * @class Ext.Button
+ * @member Ext.Button
  * @xtype button
  */
 @mixin sencha-button-ui($ui-label, $color, $gradient: $button-gradient) {

@@ -1,28 +1,28 @@
 @import '../global';
 
 /**
- * @global {measurement} [$index-bar-width=2.1em]
+ * @var {measurement} $index-bar-width
  * Width of the index bar.
  *
- * @class Ext.IndexBar
+ * @member Ext.IndexBar
  * @xtype indexbar
  */
 $index-bar-width: 2.1em !default;
 
 /**
- * @global {color} [$index-bar-bg-color=hsla(hue($base-color), 10%, 60%, .8)]
+ * @var {color} $index-bar-bg-color
  * Background-color of the index bar.
  *
- * @class Ext.IndexBar
+ * @member Ext.IndexBar
  * @xtype indexbar
  */
 $index-bar-bg-color: hsla(hue($base-color), 10%, 60%, .8) !default;
 
 /**
- * @global {color} [$index-bar-color=darken(desaturate($base-color, 5%), 15%)]
+ * @var {color} $index-bar-color
  * Text color of the index bar.
  *
- * @class Ext.IndexBar
+ * @member Ext.IndexBar
  * @xtype indexbar
  */
 $index-bar-color: darken(desaturate($base-color, 5%), 15%) !default;
@@ -30,7 +30,7 @@ $index-bar-color: darken(desaturate($base-color, 5%), 15%) !default;
 /**
  * Includes default index bar styles.
  *
- * @class Ext.FormPanel
+ * @member Ext.FormPanel
  * @xtype indexbar
  */
 @mixin sencha-indexbar {

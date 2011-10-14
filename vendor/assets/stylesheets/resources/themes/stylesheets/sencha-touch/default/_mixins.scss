@@ -3,13 +3,12 @@
 /**
  * Add a background gradient to a selector.
  *
- * @param {color} $bg-color The base color of the gradient.
- * @param {string} [$type=$base-gradient] The style of the gradient, one of five pre-defined options: matte, bevel, glossy, recessed, or flat.
+ *     .my-element {
+ *       @include background-gradient(green, 'recessed')
+ *     }
  *
- * @example
- * .my-element {
- *   @include background-gradient(green, 'recessed')
- * }
+ * @param {color} $bg-color The base color of the gradient.
+ * @param {string} $type The style of the gradient, one of five pre-defined options: matte, bevel, glossy, recessed, or flat.
  */
 @mixin background-gradient($bg-color, $type: $base-gradient) {
   background-color: $bg-color;
@@ -30,11 +29,10 @@
 
 /**
  * Includes a base64-encoded icon for use within tab bars and buttons (With the component parameter iconMask: true).
+ * 
+ *     @include pictos-iconmask('attachment');
  *
  * @param {string} $name The name of the icon to be included. This is to match the name of the icon file (located at resources/themes/images/default/pictos) without its extention (.png).
- *
- * @example
- * @include pictos-iconmask('attachment');
  */
 @mixin pictos-iconmask($name) {
   .x-tab img.#{$name}, .x-button img.x-icon-mask.#{$name} {
@@ -46,7 +44,7 @@
  * Includes the default styles for toolbar buttons, mostly used as a helper function.
  *
  * @param {color} $bg-color Base color to be used for the button.
- * @param {color} [$type=$button-gradient] $type Gradient style for the button, will automatically use "recessed" when pressed.
+ * @param {color} $type Gradient style for the button, will automatically use "recessed" when pressed.
  */
 @mixin toolbar-button($bg-color, $type: $button-gradient){
   &, .x-toolbar & {
@@ -115,15 +113,15 @@
 /**
  * Adds basic styles to :before or :after pseudo-elements.
  *
- * @param {measurement} [$width=30px] Height of pseudo-element.
- * @param {measurement} [$height=30px] Height of pseudo-element.
- * @param {measurement} [$top=0] Top positioning of pseudo-element.
- * @param {measurement} [$left=0] Left positioning of pseudo-element.
+ *     .my-element:after {
+ *       @include insertion(50px, 50px);
+ *     }
  *
- * @example
- * .my-element:after {
- *   @include insertion(50px, 50px);
- * }
+ * @param {measurement} $width Height of pseudo-element.
+ * @param {measurement} $height Height of pseudo-element.
+ * @param {measurement} $top Top positioning of pseudo-element.
+ * @param {measurement} $left Left positioning of pseudo-element.
+ *
  */
 @mixin insertion($width: 30px, $height: 30px, $top: 0, $left: 0) {
   content: "";
@@ -136,7 +134,6 @@
 
 /**
  * Makes an element stretch to its parent's bounds.
- *
  */
 @mixin stretch {
   position: absolute;
@@ -149,18 +146,16 @@
 /**
  * Colors the text of an element based on lightness of its background.
  *
+ *     .my-element {
+ *       @include color-by-background(#fff); // Colors text black.
+ *     }
+ *     
+ *     .my-element {
+ *       @include color-by-background(#fff, 40%); // Colors text gray.
+ *     }
+ *
  * @param {color} $bg-color Background color of element.
- * @param {percent} [$contrast=100%] Contrast of text color to its background.
- *
- * @example
- * .my-element {
- *   @include color-by-background(#fff); // Colors text black.
- * }
- *
- * @example
- * .my-element {
- *   @include color-by-background(#fff, 40%); // Colors text gray.
- * }
+ * @param {percent} $contrast Contrast of text color to its background.
  *
  */
 @mixin color-by-background($bg-color, $contrast: 100%) {
@@ -184,8 +179,8 @@
  * Creates a background gradient for masked elements, based on the lightness of their background.
  *
  * @param {color} $bg-color Background color of element.
- * @param {percent} [$percent=100%] Contrast of the new gradient to its background.
- * @param {percent} [$style=$base-gradient] Gradient style of the gradient.
+ * @param {percent} $percent Contrast of the new gradient to its background.
+ * @param {percent} $style Gradient style of the gradient.
  * @see background-gradient
  *
  */

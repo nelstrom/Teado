@@ -1,26 +1,26 @@
 @import '../global';
 
 /**
- * @global {measurement} [$carousel-indicator-size=.5em] Size (width/height) of carousel indicator dots.
+ * @var {measurement} $carousel-indicator-size Size (width/height) of carousel indicator dots.
  *
- * @class Ext.Carousel.Indicator
+ * @member Ext.Carousel.Indicator
  * @xtype carouselindicator
  */
 $carousel-indicator-size: .5em !default;
 
 /**
- * @global {measurement} [$carousel-indicator-spacing=.2em]
+ * @var {measurement} $carousel-indicator-spacing
  * Amount of space between carousel indicator dots.
  *
- * @class Ext.Carousel.Indicator
+ * @member Ext.Carousel.Indicator
  * @xtype carouselindicator
  */
 $carousel-indicator-spacing: .2em !default;
 
 /**
- * @global {measurement} [$carousel-track-size=1.5em] Size of the track the carousel indicator dots are in.
+ * @var {measurement} $carousel-track-size Size of the track the carousel indicator dots are in.
  *
- * @class Ext.Carousel.Indicator
+ * @member Ext.Carousel.Indicator
  * @xtype carouselindicator
  */
 $carousel-track-size: 1.5em !default;
@@ -28,7 +28,7 @@ $carousel-track-size: 1.5em !default;
 /**
  * Includes basic carousel formatting.
  *
- * @class Ext.Carousel
+ * @member Ext.Carousel
  * @xtype carousel
  */
 @mixin sencha-carousel {
@@ -106,7 +106,7 @@ $carousel-track-size: 1.5em !default;
  * @param {color} $active-color Active color for the UI.
  * @param {string} $active-gradient Active gradient for the UI.
  * 
- * @class Ext.Carousel.Indicator
+ * @member Ext.Carousel.Indicator
  * @xtype carouselindicator
  */
 @mixin sencha-carousel-indicator-ui($ui-label, $color, $gradient, $active-color, $active-gradient) {

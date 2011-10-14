@@ -2,83 +2,83 @@
 
 
 /**
- * @global {color} [$list-color=#000]
+ * @var {color} $list-color
  * Text color for list rows.
  *
- * @class Ext.List
+ * @member Ext.List
  * @xtype list
  */
 $list-color: #000 !default;
 
 /**
- * @global {color} [$list-bg-color=#f7f7f7]
+ * @var {color} $list-bg-color
  * Background-color for list rows.
  *
- * @class Ext.List
+ * @member Ext.List
  * @xtype list
  */
 $list-bg-color: #f7f7f7 !default;
 
 /**
- * @global {color} [$list-pressed-color=lighten($active-color, 50%)]
+ * @var {color} $list-pressed-color
  * Background-color for pressed list rows.
  *
- * @class Ext.List
+ * @member Ext.List
  * @xtype list
  */
 $include-list-highlights: $include-highlights !default;
 
 /**
- * @global {color} [$list-pressed-color=lighten($active-color, 50%)]
+ * @var {color} $list-pressed-color
  * Background-color for pressed list rows.
  *
- * @class Ext.List
+ * @member Ext.List
  * @xtype list
  */
 $list-pressed-color: lighten($active-color, 50%) !default;
 
 /**
- * @global {color} [$list-active-color=$active-color]
+ * @var {color} $list-active-color
  * Background-color for selected list rows.
  *
- * @class Ext.List
+ * @member Ext.List
  * @xtype list
  */
 $list-active-color: $active-color !default;
 
 /**
- * @global {string} [$list-active-gradient=$base-gradient]
+ * @var {string} $list-active-gradient
  * Gradient style for selected list rows.
  *
- * @class Ext.List
+ * @member Ext.List
  * @xtype list
  */
 $list-active-gradient: $base-gradient !default;
 
 /**
- * @global {color} [$list-header-bg-color=lighten(saturate($base-color, 10%), 20%)]
+ * @var {color} $list-header-bg-color
  * Background-color for list header rows (in grouped lists).
  *
- * @class Ext.List
+ * @member Ext.List
  * @xtype list
  */
 $list-header-bg-color: lighten(saturate($base-color, 10%), 20%) !default;
 
 /**
- * @global {string} [$list-header-gradient=$base-gradient]
+ * @var {string} $list-header-gradient
  * Gradient style for list header rows (in grouped lists).
  *
- * @class Ext.List
+ * @member Ext.List
  * @xtype list
  * @see background-gradient
  */
 $list-header-gradient: $base-gradient !default;
 
 /**
- * @global {measurement} [$list-disclosure-size=1.7em]
+ * @var {measurement} $list-disclosure-size
  * Default size (width/height) for disclosure icons.
  *
- * @class Ext.List
+ * @member Ext.List
  * @xtype list
  */
 $list-disclosure-size: 1.7em;
@@ -86,7 +86,7 @@ $list-disclosure-size: 1.7em;
 /**
  * Includes default list styles.
  *
- * @class Ext.List
+ * @member Ext.List
  * @xtype list
  */
 @mixin sencha-list {

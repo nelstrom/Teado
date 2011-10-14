@@ -1,37 +1,37 @@
 @import '../global';
 
 /**
- * @global {color} [$toolbar-input-bg=#fff]
+ * @var {color} $toolbar-input-bg
  * Background-color for toolbar form fields.
  *
- * @class Ext.form.Field
+ * @member Ext.form.Field
  * @xtype field
  */
 $toolbar-input-bg: #fff !default;
 
 /**
- * @global {color} [$toolbar-input-color=#000]
+ * @var {color} $toolbar-input-color
  * Text color for toolbar form fields.
  *
- * @class Ext.form.Field
+ * @member Ext.form.Field
  * @xtype field
  */
 $toolbar-input-color: #000 !default;
 
 /**
- * @global {measurement} [$toolbar-input-height=1.5em]
+ * @var {measurement} $toolbar-input-height
  * Text color for toolbar form fields.
  *
- * @class Ext.form.Field
+ * @member Ext.form.Field
  * @xtype field
  */
 $toolbar-input-height: 1.5em !default;
 
 /**
- * @global {color} [$toolbar-input-border-color=rgba(#000, .5)]
+ * @var {color} $toolbar-input-border-color
  * Border color for toolbar form fields.
  *
- * @class Ext.form.Field
+ * @member Ext.form.Field
  * @xtype field
  */
 $toolbar-input-border-color: rgba(#000, .5) !default;
@@ -43,7 +43,7 @@ $toolbar-search-left-padding: 1.67em;
 /**
  * Includes default toolbar form field styles.
  *
- * @class Ext.TabBar
+ * @member Ext.TabBar
  * @xtype tabbar
  */
 @mixin sencha-toolbar-forms {

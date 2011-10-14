@@ -5,99 +5,99 @@
 @import '../global';
 
 /**
- * @global {boolean} [$include-tabbar-uis=$include-default-uis] Optionally disable separate tabbar UIs (light and dark).
+ * @var {boolean} $include-tabbar-uis Optionally disable separate tabbar UIs (light and dark).
  *
- * @class Ext.TabBar
+ * @member Ext.TabBar
  * @xtype tabbar
  */
 $include-tabbar-uis: $include-default-uis !default;
 
 /**
- * @global {boolean} [$include-top-tabs=true]
+ * @var {boolean} $include-top-tabs
  * Optionally exclude top tab styles by setting to false.
  *
- * @class Ext.TabBar
+ * @member Ext.TabBar
  * @xtype tabbar
  */
 $include-top-tabs: true !default;
 
 /**
- * @global {boolean} [$include-bottom-tabs=true]
+ * @var {boolean} $include-bottom-tabs
  * Optionally exclude bottom tab styles by setting to false.
  *
- * @class Ext.TabBar
+ * @member Ext.TabBar
  * @xtype tabbar
  */
 $include-bottom-tabs: true !default;
 
 /**
- * @global {color} [$tabs-light=lighten(desaturate($base-color, 10%), 5%)]
+ * @var {color} $tabs-light
  * Base color for "light" UI tabs.
  *
- * @class Ext.TabBar
+ * @member Ext.TabBar
  * @xtype tabbar
  */
 $tabs-light: lighten(desaturate($base-color, 10%), 5%) !default;
 
 /**
- * @global {color} [$tabs-light-active=saturate($active-color, 20%)]
+ * @var {color} $tabs-light-active
  * Active color for "light" UI tabs.
  *
- * @class Ext.TabBar
+ * @member Ext.TabBar
  * @xtype tabbar
  */
 $tabs-light-active: saturate($active-color, 20%) !default;
 
 /**
- * @global {color} [$tabs-dark=darken($base-color, 20%)]
+ * @var {color} $tabs-dark
  * Base color for "dark" UI tabs.
  *
- * @class Ext.TabBar
+ * @member Ext.TabBar
  * @xtype tabbar
  */
 $tabs-dark: darken($base-color, 20%) !default;
 
 /**
- * @global {color} [$tabs-dark-active=saturate(lighten($active-color, 30%), 70%)]
+ * @var {color} $tabs-dark-active
  * Active color for "dark" UI tabs.
  *
- * @class Ext.TabBar
+ * @member Ext.TabBar
  * @xtype tabbar
  */
 $tabs-dark-active-color: saturate(lighten($active-color, 30%), 70%) !default;
 
 /**
- * @global {string} [$tabs-bar-gradient=$base-gradient]
+ * @var {string} $tabs-bar-gradient
  * Background gradient style for tab bars.
  *
- * @class Ext.TabBar
+ * @member Ext.TabBar
  * @xtype tabbar
  */
 $tabs-bar-gradient: $base-gradient !default;
 
 /**
- * @global {string} [$tabs-bottom-radius=.25em]
+ * @var {string} $tabs-bottom-radius
  * Border-radius for bottom tabs.
  *
- * @class Ext.Tab
+ * @member Ext.Tab
  * @xtype tab
  */
 $tabs-bottom-radius: .25em !default;
 
 /**
- * @global {string} [$tabs-bottom-icon-size=1.65em]
+ * @var {string} $tabs-bottom-icon-size
  * Icon size for bottom tabs
  *
- * @class Ext.Tab
+ * @member Ext.Tab
  * @xtype tab
  */
 $tabs-bottom-icon-size: 1.65em !default;
 
 /**
- * @global {string} [$tabs-bottom-active-gradient='glossy']
+ * @var {string} $tabs-bottom-active-gradient
  * Background gradient style for active bottom tabs.
  *
- * @class Ext.Tab
+ * @member Ext.Tab
  * @xtype tab
  */
 $tabs-bottom-active-gradient: 'glossy' !default;
@@ -109,7 +109,7 @@ $tabs-top-height: $global-row-height - .8em;
 /**
  * Includes default tab styles.
  *
- * @class Ext.TabBar
+ * @member Ext.TabBar
  * @xtype tabbar
  */
 @mixin sencha-tabs {
@@ -249,7 +249,7 @@ $tabs-top-height: $global-row-height - .8em;
  *    ...
  * });
  * 
- * @class Ext.TabBar
+ * @member Ext.TabBar
  * @xtype tabbar
  */
 @mixin sencha-tabbar-ui($ui-label, $bar-color, $bar-gradient, $tab-active-color) {
