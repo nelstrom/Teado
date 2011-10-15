@@ -1,6 +1,8 @@
 ---
 application.js: application-17702338e94f17c2bec4b7acbe0d3db1.js
+touch.js: touch-4b819169b8c4543acecdf264753642ca.js
 application.css: application-613608b702f8b448c9193f9bfa879da1.css
+touch.css: touch-fcf9be6e209e830e0d595cc28e762e5a.css
 resources/psd/tabs.psd: resources/psd/tabs-c14922321bf91b2c6ccfbb3f115dcb41.psd
 resources/sass/config-debug.rb: resources/sass/config-debug-5d3acf9e20287ac424337680cbc710ad.rb
 resources/sass/config-release.rb: resources/sass/config-release-e720a5dc071e3ad809cd6974a8cbf8d5.rb
