@@ -9,7 +9,7 @@ gem 'mocha', :group => :test
 
 group :development do
   gem 'nifty-generators'
-  gem 'ruby-debug'
+  gem 'ruby-debug19'
   gem 'rspec-rails'
   gem 'factory_girl'
   gem 'ffaker'
