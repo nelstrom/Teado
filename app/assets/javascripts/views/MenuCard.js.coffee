@@ -18,15 +18,19 @@ App.views.MenuCard = Ext.extend Ext.TabPanel,
           xtype:    'App.views.TasksPacket'
           id:       'tasksPacket'
           title:    'tasks'
-          iconCls:  'tasks'
+          iconCls:  'check1'
         }
         {
           xtype:    'App.views.TagsPacket'
           id:       'tagsPacket'
           title:    'tags'
-          iconCls:  'tags'
+          iconCls:  'tag'
         }
-        { xtype: 'panel', iconCls: 'profile', title: 'profile' }
+        {
+          xtype: 'panel'
+          title: 'profile'
+          iconCls: 'user'
+        }
       ]
 
     App.views.MenuCard.superclass.initComponent.call(this)

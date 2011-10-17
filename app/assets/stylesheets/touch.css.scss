@@ -1,3 +1,5 @@
+$include-default-icons: false;
+
 @import 'sencha-touch/default/all';
 @include sencha-panel;
 @include sencha-buttons;
@@ -13,6 +15,12 @@
 @include sencha-form;
 @include sencha-msgbox;
 
+@include pictos-iconmask('check1');
+@include pictos-iconmask('home');
+@include pictos-iconmask('user');
+@include pictos-iconmask('tag');
+@include pictos-iconmask('add');
+
 #tagsList .x-mask,
 #tasksList .x-mask { width: 100% !important; height: 100% !important; }
 .checkitem {
@@ -27,4 +35,3 @@
     @include checkmark($active-color);
   }
 }
-
