@@ -3,6 +3,7 @@ source 'http://rubygems.org'
 gem 'rails', '3.1.1'
 gem 'pg'
 gem 'json'
+gem 'rack-contrib'
  
 gem 'bcrypt-ruby', :require => 'bcrypt'
 gem 'mocha', :group => :test
