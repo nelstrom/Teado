@@ -10,7 +10,8 @@ GIT
 
 GIT
   remote: git://github.com/nelstrom/compass-sencha-touch.git
-  revision: 56338905932c3d0fca6fb01ee5b6797166fbb509
+  revision: fe524161a985af2749f5a50cb05a02155ec9c201
+  ref: fe524161a985af2749f5a50cb05a02155ec9c201
   specs:
     sencha-touch (1.1.0)
       compass (>= 0.12.alpha)
