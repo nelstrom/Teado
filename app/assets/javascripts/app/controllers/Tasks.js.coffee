@@ -33,50 +33,49 @@ Ext.regController 'Tasks'
     packet.setActiveItem('tasksForm')
 
   create: (params) ->
-    controller = this
     params.form.submit(
+      scope: this
       success: ->
-        console.log 'task created successfully'
-        controller.store.load()
-        controller.index()
+        @store.load()
+        @index()
       failure: (form, result) ->
+        # TODO: show errors on the form
         console.log 'task creation failed'
         console.log 'result: ', result
     )
 
   update: (params) ->
-    controller = this
     model = params.form.getRecord()
 
     params.form.submit(
+      scope: this
       url: "/tasks/#{model.data.id}.json"
       method: "PUT"
       success: ->
         console.log 'task updated successfully'
-        controller.store.load()
-        controller.index()
+        @store.load()
+        @index()
       failure: (form, result) ->
         console.log 'task update failed'
         console.log 'result: ', result
     )
 
   destroy: (params) ->
-    controller = this
     model = params.form.getRecord()
 
     params.form.submit(
+      scope: this
       url: "/tasks/#{model.data.id}.json"
       method: "DELETE"
       success: ->
         console.log 'task was successfully destroyed'
-        controller.store.load()
-        controller.index()
+        @store.load()
+        @index()
       failure: (form, result) ->
         console.log 'task destruction failed'
     )
 
   toggleDone: (params) ->
-    controller = this
     model = @store.getAt(params.index)
 
     # Update the local copy of the model
@@ -93,8 +92,9 @@ Ext.regController 'Tasks'
     # })
 
     Ext.Ajax.request
+      scope: this
       url: "/tasks/#{model.data.id}/toggle.json"
       method: "POST"
       success: (response, params) ->
         console.log "#toggleDone posted successfully"
-        controller.store.load()
+        @store.load()
