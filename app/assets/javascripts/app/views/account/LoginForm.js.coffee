@@ -1,4 +1,5 @@
-App.views.LoginForm = Ext.extend App.views.CommonForm,
+Ext.define 'App.views.LoginForm'
+  extend: 'App.views.CommonForm'
 
   initComponent: ->
 
@@ -22,4 +23,3 @@ App.views.LoginForm = Ext.extend App.views.CommonForm,
 
     App.views.LoginForm.superclass.initComponent.call(this)
 
-Ext.reg('App.views.LoginForm', App.views.LoginForm)

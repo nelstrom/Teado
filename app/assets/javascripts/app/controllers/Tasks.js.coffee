@@ -1,5 +1,6 @@
-Ext.regController 'Tasks'
-  store: App.stores.tasks
+Ext.define 'App.controllers.Tasks'
+  extend: 'Ext.app.Controller'
+  store: Ext.getStore('App.stores.tasks')
 
   index: ->
     menucard = App.views.viewport.getComponent("menuCardPanel")

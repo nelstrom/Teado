@@ -1,4 +1,5 @@
-App.views.SignupForm = Ext.extend App.views.CommonForm,
+Ext.define 'App.views.SignupForm'
+  extend: 'App.views.CommonForm'
 
   initComponent: ->
 
@@ -25,5 +26,3 @@ App.views.SignupForm = Ext.extend App.views.CommonForm,
       defaultInstructions: 'To sign up, simply choose your username and password, and provide your email address.'
 
     App.views.SignupForm.superclass.initComponent.call(this)
-
-Ext.reg('App.views.SignupForm', App.views.SignupForm)

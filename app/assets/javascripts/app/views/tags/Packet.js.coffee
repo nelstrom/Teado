@@ -1,4 +1,5 @@
-App.views.TagsPacket = Ext.extend Ext.Panel,
+Ext.define 'App.views.TagsPacket'
+  extend: 'Ext.Panel'
 
   initComponent: ->
     Ext.apply this,
@@ -8,5 +9,3 @@ App.views.TagsPacket = Ext.extend Ext.Panel,
         { xtype: 'App.views.TagsForm', id: 'tagsForm' }
       ]
     App.views.TagsPacket.superclass.initComponent.call(this)
-
-Ext.reg('App.views.TagsPacket', App.views.TagsPacket)

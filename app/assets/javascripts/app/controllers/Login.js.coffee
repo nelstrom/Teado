@@ -1,4 +1,5 @@
-Ext.regController 'userSession',
+Ext.define 'App.controllers.userSession',
+  extend: 'Ext.app.Controller',
 
   new: ->
     App.views.viewport.reveal('loginCardPanel')

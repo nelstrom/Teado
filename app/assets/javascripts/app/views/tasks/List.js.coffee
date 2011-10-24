@@ -1,4 +1,5 @@
-App.views.TasksList = Ext.extend Ext.Panel,
+Ext.define 'App.views.TasksList'
+  extend: 'Ext.Panel'
   initComponent: ->
     addButton =
       iconCls: 'add'
@@ -48,5 +49,3 @@ App.views.TasksList = Ext.extend Ext.Panel,
         action: 'editForm'
         index: index
       )
-
-Ext.reg('App.views.TasksList', App.views.TasksList)

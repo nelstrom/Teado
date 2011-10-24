@@ -1,4 +1,5 @@
-App.views.TagsForm = Ext.extend Ext.form.FormPanel,
+Ext.define 'App.views.TagsForm'
+  extend: 'Ext.form.FormPanel'
 
   initComponent: ->
     cancelButton =
@@ -110,5 +111,3 @@ App.views.TagsForm = Ext.extend Ext.form.FormPanel,
       form       : this
 
   resetForm: -> @reset()
-
-Ext.reg('App.views.TagsForm', App.views.TagsForm)

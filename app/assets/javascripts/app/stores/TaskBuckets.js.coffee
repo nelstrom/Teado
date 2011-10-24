@@ -1,4 +1,5 @@
-App.stores.taskbuckets = new Ext.data.Store
+Ext.create Ext.data.Store,
+  id: 'App.stores.taskbuckets'
   model: 'TaskBucket'
   autoLoad: true
   proxy:

@@ -1,4 +1,5 @@
-App.views.CommonForm = Ext.extend Ext.form.FormPanel,
+Ext.define 'App.views.CommonForm',
+  extend: 'Ext.form.FormPanel'
 
   defaultInstructions: 'Enter your username (or email address) and password to log in'
   initComponent: () ->
@@ -43,4 +44,3 @@ App.views.CommonForm = Ext.extend Ext.form.FormPanel,
     @setLoading(false)
     @reset()
 
-Ext.reg('App.views.CommonForm', App.views.CommonForm)

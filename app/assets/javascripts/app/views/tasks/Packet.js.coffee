@@ -1,4 +1,6 @@
-App.views.TasksPacket = Ext.extend Ext.Panel,
+Ext.define 'App.views.TasksPacket'
+  extend: 'Ext.Panel'
+
   initComponent: ->
     Ext.apply this,
       layout: 'card'
@@ -7,5 +9,3 @@ App.views.TasksPacket = Ext.extend Ext.Panel,
         { xtype: 'App.views.TasksForm', id: 'tasksForm' }
       ]
     App.views.TasksPacket.superclass.initComponent.call(this)
-
-Ext.reg('App.views.TasksPacket', App.views.TasksPacket)

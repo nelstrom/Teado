@@ -1,4 +1,5 @@
-Ext.regController 'dashboard',
+Ext.define 'App.controllers.dashboard',
+  extend: 'Ext.app.Controller',
 
   index: () ->
     currentUser = App.stores.currentUser.first()

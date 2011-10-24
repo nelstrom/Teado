@@ -1,4 +1,6 @@
-App.views.TagsList = Ext.extend Ext.Panel,
+Ext.define 'App.views.TagsList'
+  extend: 'Ext.Panel'
+
   initComponent: ->
     addButton =
       iconCls: 'add'
@@ -37,5 +39,3 @@ App.views.TagsList = Ext.extend Ext.Panel,
       action: 'editForm'
       index: index
     )
-
-Ext.reg('App.views.TagsList', App.views.TagsList)

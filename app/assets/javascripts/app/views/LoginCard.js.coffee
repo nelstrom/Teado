@@ -1,5 +1,6 @@
-App.views.LoginCard = Ext.extend Ext.Panel,
-  layout: 'card',
+Ext.define 'App.views.LoginCard',
+  extend: 'Ext.Panel'
+  layout: 'card'
 
   initComponent: ->
 
@@ -45,5 +46,3 @@ App.views.LoginCard = Ext.extend Ext.Panel,
     else
       button.setText 'Log in'
       titlebar.setTitle 'Sign up'
-
-Ext.reg('App.views.LoginCard', App.views.LoginCard)

@@ -1,4 +1,6 @@
-App.views.TasksForm = Ext.extend Ext.form.FormPanel,
+Ext.define 'App.views.TasksForm'
+  extend: 'Ext.form.FormPanel'
+
   initComponent: ->
     cancelButton =
       text: 'cancel'
@@ -132,5 +134,3 @@ App.views.TasksForm = Ext.extend Ext.form.FormPanel,
         )
       fieldset.show()
       fieldset.doLayout()
-
-Ext.reg('App.views.TasksForm', App.views.TasksForm)

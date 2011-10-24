@@ -1,4 +1,4 @@
-Ext.define('App.models.Tag',
+Ext.define 'App.models.Tag',
   extend: 'Ext.data.Model'
 
   fields: [

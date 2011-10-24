@@ -1,5 +1,6 @@
-Ext.regController 'Tags'
-  store: App.stores.tags
+Ext.define 'App.controllers.Tags'
+  extend: 'Ext.app.Controller'
+  store: Ext.getStore('App.stores.tags')
 
   index: ->
     menucard = App.views.viewport.getComponent("menuCardPanel")

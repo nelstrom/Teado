@@ -1,4 +1,5 @@
-App.views.ErrorField = Ext.extend(Ext.Component, {
+Ext.define('App.views.ErrorField', {
+    extend: 'Ext.Component',
 
     initComponent: function() {
         config = {
@@ -22,4 +23,3 @@ App.views.ErrorField = Ext.extend(Ext.Component, {
     },
 
 });
-Ext.reg('App.views.ErrorField', App.views.ErrorField);

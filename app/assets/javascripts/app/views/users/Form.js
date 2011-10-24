@@ -1,4 +1,5 @@
-App.views.UsersForm = Ext.extend(Ext.form.FormPanel, {
+Ext.define('App.views.UsersForm', {
+    extend: 'Ext.form.FormPanel',
     defaultInstructions: 'Please enter the information above.',
 
     initComponent: function(){
@@ -176,5 +177,3 @@ App.views.UsersForm = Ext.extend(Ext.form.FormPanel, {
         return errorField;
     }
 });
-
-Ext.reg('App.views.UsersForm', App.views.UsersForm);

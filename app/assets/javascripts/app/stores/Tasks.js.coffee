@@ -1,4 +1,5 @@
-App.stores.tasks = new Ext.data.Store
+Ext.create Ext.data.Store,
+  id: 'App.stores.tasks'
   model: 'Task'
   autoLoad: true
   proxy:

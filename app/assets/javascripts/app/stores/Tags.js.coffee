@@ -1,4 +1,5 @@
-App.stores.tags = new Ext.data.Store
+Ext.create Ext.data.Store,
+  id: 'App.stores.tags'
   model: 'Tag'
   autoLoad: true
   proxy:

@@ -1,4 +1,5 @@
-App.views.MenuCard = Ext.extend Ext.TabPanel,
+Ext.define 'App.views.MenuCard',
+  extend: 'Ext.TabPanel'
 
   initComponent: () ->
 
@@ -39,4 +40,3 @@ App.views.MenuCard = Ext.extend Ext.TabPanel,
     @setActiveItem target,
       { type: 'slide', duration: 500 }
 
-Ext.reg('App.views.MenuCard', App.views.MenuCard)

@@ -1,4 +1,5 @@
-App.views.Dashboard = Ext.extend Ext.Panel,
+Ext.define 'App.views.Dashboard',
+  extend: "Ext.Panel"
 
   initComponent: () ->
 
@@ -26,8 +27,8 @@ App.views.Dashboard = Ext.extend Ext.Panel,
     App.views.Dashboard.superclass.initComponent.call(this)
 
   displayWelcomeMessage: () ->
-    if currentUser = App.stores.currentUser.first()
+    currentUserStore = Ext.getStore('App.stores.currentUser')
+    if currentUser = currentUserStore.first()
       @update(currentUser.data)
 
 
-Ext.reg('App.views.Dashboard', App.views.Dashboard)

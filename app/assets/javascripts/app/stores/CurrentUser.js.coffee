@@ -1,5 +1,6 @@
-App.stores.currentUser = new Ext.data.Store
+Ext.create Ext.data.Store,
   model: 'CurrentUser'
+  id: 'App.stores.currentUser'
   autoLoad: true
   proxy:
     type: 'ajax'

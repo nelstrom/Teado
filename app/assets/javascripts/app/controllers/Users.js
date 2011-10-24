@@ -1,5 +1,6 @@
-Ext.regController('Users', {
-    store: App.stores.users,
+Ext.define('App.controllers.Users', {
+    extend: 'Ext.app.Controller',
+    store: Ext.getStore('App.stores.users'),
 
     index: function() {
         App.views.viewport.reveal('usersList');

@@ -1,4 +1,5 @@
-App.views.UsersList = Ext.extend(Ext.Panel, {
+Ext.define('App.views.UsersList', {
+    extend: 'Ext.Panel',
     initComponent: function(){
         var addButton, titlebar, list;
 
@@ -53,5 +54,3 @@ App.views.UsersList = Ext.extend(Ext.Panel, {
         });
     }
 });
-
-Ext.reg('App.views.UsersList', App.views.UsersList);
