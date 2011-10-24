@@ -1,5 +1,10 @@
 Ext.define 'App.controllers.dashboard',
   extend: 'Ext.app.Controller',
+  views: [
+    "App.views.Dashboard"
+    "App.views.LoginCard"
+    "App.views.MenuCard"
+  ]
 
   index: () ->
     currentUser = App.stores.currentUser.first()
