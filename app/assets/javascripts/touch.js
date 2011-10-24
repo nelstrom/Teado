@@ -1,4 +1,4 @@
-//= require      "sencha-touch"
+//= require      "sencha-touch-all"
 //= require      "app/routes"
 //= require      "app/app"
 //= require      "app/overrides"
