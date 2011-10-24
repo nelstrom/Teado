@@ -1,5 +1,5 @@
 //= require      "sencha-touch-all"
-//= require      "app/routes"
+// require      "app/routes"
 //= require      "app/app"
 //= require      "app/overrides"
 //= require_tree "./app/models"
