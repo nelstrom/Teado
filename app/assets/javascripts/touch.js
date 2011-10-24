@@ -1,4 +1,4 @@
-//= require      "sencha-touch-all"
+//= require      "sencha-touch-all-uncompressed-w-comments"
 // require      "app/routes"
 //= require      "app/app"
 //= require      "app/overrides"
